@@ -1,0 +1,100 @@
+﻿@model IEnumerable<UsersAndRolesDemo.Property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index @ViewBag.Username</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.propertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numBedrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numWashrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kitchen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.baseRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.builtYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.smokingAllowed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maxNumberGuests)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.availableDates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dimensions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.propertyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numBedrooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numWashrooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kitchen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.baseRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.builtYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.smokingAllowed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maxNumberGuests)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.availableDates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dimensions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

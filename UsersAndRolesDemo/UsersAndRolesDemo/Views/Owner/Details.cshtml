@@ -1,0 +1,115 @@
+﻿@model UsersAndRolesDemo.Property
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Property</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.propertyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.propertyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numBedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numBedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numWashrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numWashrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kitchen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kitchen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.baseRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.baseRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.builtYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.builtYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smokingAllowed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smokingAllowed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxNumberGuests)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxNumberGuests)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.availableDates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.availableDates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dimensions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dimensions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
