@@ -9,6 +9,10 @@ namespace UsersAndRolesDemo.Models
     public class PostPropertyVM
     {
         [Required]
+        [Display(Name = "Summary")]
+        public string Summary { get; set; }
+
+        [Required]
         [Display(Name = "Property Type")]
         public string PropertyType { get; set; }
 

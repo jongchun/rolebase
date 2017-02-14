@@ -23,6 +23,7 @@ namespace UsersAndRolesDemo
     
         public int Id { get; set; }
         public string UserId { get; set; }
+        public string summary { get; set; }
         public string propertyType { get; set; }
         public Nullable<int> numBedrooms { get; set; }
         public Nullable<int> numWashrooms { get; set; }

@@ -82,6 +82,7 @@ namespace UsersAndRolesDemo.Controllers
 
                 var test = new Property {
                     UserId = identityUser.Id,
+                    summary = property.Summary,
                     propertyType = property.PropertyType,
                     numBedrooms = property.NumBedrooms,
                     numWashrooms = property.NumWashrooms,
@@ -122,6 +123,7 @@ namespace UsersAndRolesDemo.Controllers
 
             PostPropertyVM propertyVM = new PostPropertyVM();
             propertyVM.PropertyType = property.propertyType;
+            propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
             propertyVM.NumWashrooms = (int)property.numWashrooms;
             propertyVM.Kitchen = (int)property.kitchen;
