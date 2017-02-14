@@ -1,0 +1,214 @@
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CSharp.Core.targets
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Collections.Immutable.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Reflection.Metadata.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.exe
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe.config
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll.config
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.pdb
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Web.Infrastructure.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Owin.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
+\\Mac\Home\Desktop\DailyDocs\_ssd2015_2016\_newSSD22\WAS\day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.exe
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll.config
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.pdb
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Owin.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.dll
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
+D:\Work\Downloads\UsersAndRolesDemo\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Collections.Immutable.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Reflection.Metadata.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.exe
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe.config
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll.config
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.pdb
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Owin.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
+D:\BCIT\Web Application Security\Day1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.exe
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll.config
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\UsersAndRolesDemo.pdb
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Owin.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\EntityFramework.SqlServer.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Razor.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Deployment.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe.config
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.rsp
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csi.exe
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csi.rsp
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.AppContext.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.IO.FileSystem.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.exe.config
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\vbc.rsp
+D:\Work\1\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
