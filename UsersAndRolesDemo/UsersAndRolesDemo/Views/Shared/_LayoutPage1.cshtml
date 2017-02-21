@@ -42,10 +42,6 @@
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Managers", "Manager", "Home");@Html.Raw("</li>");
-                            }
-                            if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                            {
                                 @Html.Raw("<li>");@Html.ActionLink("Administrators", "Admin", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Home");@Html.Raw("</li>");

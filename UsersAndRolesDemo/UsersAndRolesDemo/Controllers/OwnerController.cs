@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,11 +14,11 @@ using UsersAndRolesDemo.Models;
 
 namespace UsersAndRolesDemo.Controllers
 {
+    [Authorize]
     public class OwnerController : Controller
     {
         private MyDbEntities db = new MyDbEntities();
 
-        [Authorize]
         public ActionResult Index()
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
@@ -31,7 +32,6 @@ namespace UsersAndRolesDemo.Controllers
             return View(properties.ToList());
         }
 
-        [Authorize]
         // GET: Owner/Details/5
         public ActionResult Details(int id)
         {
@@ -47,7 +47,6 @@ namespace UsersAndRolesDemo.Controllers
             return View(property);
         }
 
-        [Authorize]
         // GET: Owner/Create
         public ActionResult Create()
         {
@@ -60,7 +59,6 @@ namespace UsersAndRolesDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
         public ActionResult Create(PostPropertyVM property)
         {
@@ -104,7 +102,6 @@ namespace UsersAndRolesDemo.Controllers
             return View(property);
         }
 
-        [Authorize]
         // GET: Owner/Edit/5
         public ActionResult Edit(int id)
         {
@@ -144,7 +141,6 @@ namespace UsersAndRolesDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Edit(PostPropertyVM property)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
@@ -176,7 +172,6 @@ namespace UsersAndRolesDemo.Controllers
             return View(property);
         }
 
-        [Authorize]
         // GET: Owner/Delete/5
         public ActionResult Delete(int id)
         {
@@ -195,7 +190,6 @@ namespace UsersAndRolesDemo.Controllers
         // POST: Owner/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Property property = db.Properties.Find(id);
@@ -204,7 +198,6 @@ namespace UsersAndRolesDemo.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
