@@ -107,7 +107,8 @@ namespace UsersAndRolesDemo.Controllers
 
         public ActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Affordable rental cabins located throughout Whistler, " + 
+                "B.C. Our Service has been praised by our loyal costumers and over the years we have gained more cotumers. Are properties are increasing in Wistler area. Come find your new cabin today!";
 
             return View();
         }

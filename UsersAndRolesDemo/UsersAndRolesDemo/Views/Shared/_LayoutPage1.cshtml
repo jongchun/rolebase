@@ -34,6 +34,7 @@
                             if (!Request.IsAuthenticated)
                             {
                                 @Html.Raw("<li>");@Html.ActionLink("Home", "Index", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
@@ -50,7 +51,7 @@
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Administrators", "Admin", "Admin");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
                             }
