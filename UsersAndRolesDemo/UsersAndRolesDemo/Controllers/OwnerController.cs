@@ -24,10 +24,13 @@ namespace UsersAndRolesDemo.Controllers
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
-
+            
             ViewBag.Username = User.Identity.Name;
-            var properties = db.Properties.Include(p => p.AspNetUser);
-            //var properties = db.Properties.Where;
+            //var properties = db.Properties.Include(p => p.AspNetUser);
+            var properties = from b in db.Properties
+                        where b.UserId == User.Identity.GetUserId()
+                        select b;
+
             return View(properties.ToList());
         }
 

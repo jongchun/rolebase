@@ -225,9 +225,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminProfileVM.cs" />
     <Compile Include="Models\ChangePasswordVM.cs" />
     <Compile Include="Models\ForgotPasswordVM.cs" />
     <Compile Include="Models\LoginVM.cs" />
+    <Compile Include="Models\OwnerProfileVM.cs" />
     <Compile Include="Models\PostPropertyVM.cs" />
     <Compile Include="Models\RegisteredUserVM.cs" />
     <Compile Include="Models\ResetPasswordVM.cs" />
