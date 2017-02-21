@@ -225,9 +225,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminProfileVM.cs" />
     <Compile Include="Models\ChangePasswordVM.cs" />
     <Compile Include="Models\ForgotPasswordVM.cs" />
     <Compile Include="Models\LoginVM.cs" />
+    <Compile Include="Models\OwnerProfileVM.cs" />
     <Compile Include="Models\PostPropertyVM.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\RegisteredUserVM.cs" />
@@ -278,6 +280,10 @@
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Home\Properties.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
