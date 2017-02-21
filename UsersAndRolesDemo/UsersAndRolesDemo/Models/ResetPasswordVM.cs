@@ -9,8 +9,8 @@ namespace UsersAndRolesDemo.Models
     public class ResetPasswordVM
     {
         [Required]
-        [Display(Name = "User Name")]
-        public string UserName { get; set; }
+        [Display(Name = "User ID")]
+        public string UserID { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]

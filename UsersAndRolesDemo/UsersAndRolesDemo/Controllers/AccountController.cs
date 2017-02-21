@@ -8,12 +8,16 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using UsersAndRolesDemo.Models;
+using UsersAndRolesDemo.Services;
 
 namespace UsersAndRolesDemo.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        const string EMAIL_CONFIRMATION = "EmailConfirmation";
+        const string PASSWORD_RESET = "ResetPassword";
+
         private MyDbEntities db = new MyDbEntities();
 
         [HttpGet]
@@ -36,7 +40,7 @@ namespace UsersAndRolesDemo.Controllers
 
             if (ModelState.IsValid)
             {
-                if (identityUser != null)
+                if (ValidLogin(login))
                 {
                     IAuthenticationManager authenticationManager
                                            = HttpContext.GetOwinContext()
@@ -57,10 +61,12 @@ namespace UsersAndRolesDemo.Controllers
                     var test = identityUser.Roles.ElementAt(0).RoleId;
                     if (test == "Owner")
                     {
+                        //System.Threading.Thread.Sleep(2000);
                         return RedirectToAction("Index", "Owner");
                     }
                     else if (test == "Admin")
                     {
+                        //System.Threading.Thread.Sleep(2000);
                         return RedirectToAction("Index", "Admin");
                     }
                     else
@@ -85,7 +91,13 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult Register(RegisteredUserVM newUser)
         {
             var userStore = new UserStore<IdentityUser>();
-            var manager = new UserManager<IdentityUser>(userStore);
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore)
+            {
+                UserLockoutEnabledByDefault = true,
+                DefaultAccountLockoutTimeSpan = new TimeSpan(0, 10, 0),
+                MaxFailedAccessAttemptsBeforeLockout = 5
+            };
+
             var identityUser = new IdentityUser()
             {
                 UserName = newUser.UserName,
@@ -95,17 +107,25 @@ namespace UsersAndRolesDemo.Controllers
 
             if (result.Succeeded)
             {
-                var authenticationManager
-                                  = HttpContext.Request.GetOwinContext()
-                                   .Authentication;
-                var userIdentity = manager.CreateIdentity(identityUser,
-                                  DefaultAuthenticationTypes.ApplicationCookie);
-                authenticationManager.SignIn(new AuthenticationProperties() { },
-                                             userIdentity);
+                CreateTokenProvider(manager, EMAIL_CONFIRMATION);
+
+                var code = manager.GenerateEmailConfirmationToken(identityUser.Id);
+                var callbackUrl = Url.Action("ConfirmEmail", "Home",
+                                                new { userId = identityUser.Id, code = code },
+                                                    protocol: Request.Url.Scheme);
+
+                string email = "Please confirm your account by clicking this link: <a href=\""
+                                + callbackUrl + "\">Confirm Registration</a>";
+                
+                EmailService es = new EmailService();
+                es.SendEmail(newUser.Email, "Confirm Registration", email);
+                ViewBag.Confirmation = "We sent the confirm registration email. Please check the email first.";
+
             }
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Logout()
         {
             var ctx = Request.GetOwinContext();
@@ -113,5 +133,128 @@ namespace UsersAndRolesDemo.Controllers
             authenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        [AllowAnonymous]
+        bool ValidLogin(LoginVM login)
+        {
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> userManager = new UserManager<IdentityUser>(userStore)
+            {
+                UserLockoutEnabledByDefault = true,
+                DefaultAccountLockoutTimeSpan = new TimeSpan(0, 10, 0),
+                MaxFailedAccessAttemptsBeforeLockout = 3
+            };
+            var user = userManager.FindByName(login.UserName);
+
+            if (user == null)
+                return false;
+
+            // User is locked out.
+            if (userManager.SupportsUserLockout && userManager.IsLockedOut(user.Id))
+                return false;
+
+            // Validated user was locked out but now can be reset.
+            if (userManager.CheckPassword(user, login.Password) && userManager.IsEmailConfirmed(user.Id))
+
+            {
+                if (userManager.SupportsUserLockout
+                 && userManager.GetAccessFailedCount(user.Id) > 0)
+                {
+                    userManager.ResetAccessFailedCount(user.Id);
+                }
+            }
+            // Login is invalid so increment failed attempts.
+            else
+            {
+                bool lockoutEnabled = userManager.GetLockoutEnabled(user.Id);
+                if (userManager.SupportsUserLockout && userManager.GetLockoutEnabled(user.Id))
+                {
+                    userManager.AccessFailed(user.Id);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        [AllowAnonymous]
+        public ActionResult ConfirmEmail(string userID, string code)
+        {
+            var userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            var user = manager.FindById(userID);
+            CreateTokenProvider(manager, EMAIL_CONFIRMATION);
+            try
+            {
+                IdentityResult result = manager.ConfirmEmail(userID, code);
+                if (result.Succeeded)
+                    ViewBag.Message = "You are now registered!";
+            }
+            catch
+            {
+                ViewBag.Message = "Validation attempt failed!";
+            }
+            return View();
+        }
+
+        [AllowAnonymous]
+        void CreateTokenProvider(UserManager<IdentityUser> manager, string tokenType)
+        {
+            manager.UserTokenProvider = new EmailTokenProvider<IdentityUser>();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult ForgotPassword(ForgotPasswordVM model)
+        {
+            var userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            var user = manager.FindByEmail(model.Email);
+            CreateTokenProvider(manager, PASSWORD_RESET);
+
+            var code = manager.GeneratePasswordResetToken(user.Id);
+            var callbackUrl = Url.Action("ResetPassword", "Home",
+                                         new { userId = user.Id, code = code },
+                                         protocol: Request.Url.Scheme);
+            string mail = "Please reset your password by clicking <a href=\""
+                                     + callbackUrl + "\">here</a>";
+            EmailService es = new EmailService();
+            es.SendEmail(model.Email, "Password Reset", mail);
+
+            ViewBag.EmailMessage = "We sent the password reset email. Please check the email.";
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult ResetPassword(string userID, string code)
+        {
+            ViewBag.PasswordToken = code;
+            ViewBag.UserID = userID;
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult ResetPassword(ResetPasswordVM model)
+        {
+
+            var userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            var user = manager.FindById(model.UserID);
+            CreateTokenProvider(manager, PASSWORD_RESET);
+
+            IdentityResult result = manager.ResetPassword(model.UserID, model.Code, model.Password);
+            if (result.Succeeded)
+                ViewBag.Result = "The password has been reset.";
+            else
+                ViewBag.Result = "The password has not been reset.";
+            return View();
+        }
+
     }
 }
