@@ -19,13 +19,17 @@ namespace UsersAndRolesDemo.Controllers
         // GET: api/_AdminPropertyContoller
         public IQueryable<Property> GetProperties()
         {
-            return db.Properties;
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
+            return context.Properties;
         }
 
         // GET: api/_AdminPropertyContoller/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult GetProperty(int id)
         {
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
             Property property = db.Properties.Find(id);
             if (property == null)
             {
