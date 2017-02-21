@@ -27,10 +27,11 @@ namespace UsersAndRolesDemo.Controllers
             
             ViewBag.Username = User.Identity.Name;
             //var properties = db.Properties.Include(p => p.AspNetUser);
+            var id = User.Identity.GetUserId();
             var properties = from b in db.Properties
-                        where b.UserId == User.Identity.GetUserId()
+                        where b.UserId == id
                         select b;
-
+            
             return View(properties.ToList());
         }
 
