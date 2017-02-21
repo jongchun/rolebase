@@ -409,3 +409,9 @@ D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.dll
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\Newtonsoft.Json.xml
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.pdb
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.xml
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Net.Http.Formatting.dll
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Http.dll
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Http.WebHost.dll
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Net.Http.Formatting.xml
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Http.xml
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Http.WebHost.xml
