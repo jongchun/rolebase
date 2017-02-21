@@ -65,7 +65,7 @@ namespace UsersAndRolesDemo.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("SecureArea", "Home");
+                        //return RedirectToAction("SecureArea", "Home");
                     }
                 }
             }

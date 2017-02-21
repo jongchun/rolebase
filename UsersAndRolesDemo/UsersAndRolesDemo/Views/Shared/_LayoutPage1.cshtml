@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/Content/site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
@@ -33,23 +34,30 @@
                             if (!Request.IsAuthenticated)
                             {
                                 @Html.Raw("<li>");@Html.ActionLink("Home", "Index", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Contact", "Contact", "Home");@Html.Raw("</li>");
+
                             }
-                            if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Owner")))
+                            if (Request.IsAuthenticated && User.IsInRole("Owner"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Secure Area", "SecureArea", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Index", "Index", "Owner");@Html.Raw("</li>");
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Administrators", "Admin", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Index", "Index", "Admin");@Html.Raw("</li>");
+                            }
+                            if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                @Html.Raw("<li>");@Html.ActionLink("Administrators", "Admin", "Admin");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
                             }
                             if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Owner")))
                             {
                                 @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "Profile", "Account");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Account");@Html.Raw("</li>");
                             }
                         }
                     </ul>

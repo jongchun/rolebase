@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,7 +32,7 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         // GET: Owner/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -173,7 +172,7 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         // GET: Owner/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {

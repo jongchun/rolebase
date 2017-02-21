@@ -22,14 +22,14 @@ namespace UsersAndRolesDemo.Controllers
 
         public ActionResult About()
         {
-            //ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            //ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your contact page.";
 
             return View();
         }

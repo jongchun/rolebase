@@ -16,7 +16,6 @@ namespace UsersAndRolesDemo.Controllers
     {
         private MyDbEntities db = new MyDbEntities();
 
-        // GET: Admin
         public ActionResult Index()
         {
             return View();
