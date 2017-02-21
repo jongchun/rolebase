@@ -7,7 +7,7 @@ using System.Web;
 namespace UsersAndRolesDemo.Models {
     public class RegisteredUserVM {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string  UserName       { get; set; }
 
         [Required]
