@@ -8,6 +8,7 @@ namespace UsersAndRolesDemo.Models
 {
     public class PostPropertyVM
     {
+  
         [Required]
         [Display(Name = "Summary")]
         public string Summary { get; set; }
@@ -18,7 +19,7 @@ namespace UsersAndRolesDemo.Models
 
         [Required]
         [Display(Name = "Number of Bedrooms")]
-        public int NumBedrooms { get; set; }
+        public int NumBedrooms { get; set; }    
 
         [Required]
         [Display(Name = "Number of Washrooms")]
