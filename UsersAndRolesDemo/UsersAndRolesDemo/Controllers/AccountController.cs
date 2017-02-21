@@ -110,7 +110,7 @@ namespace UsersAndRolesDemo.Controllers
                 CreateTokenProvider(manager, EMAIL_CONFIRMATION);
 
                 var code = manager.GenerateEmailConfirmationToken(identityUser.Id);
-                var callbackUrl = Url.Action("ConfirmEmail", "Home",
+                var callbackUrl = Url.Action("ConfirmEmail", "Account",
                                                 new { userId = identityUser.Id, code = code },
                                                     protocol: Request.Url.Scheme);
 
@@ -218,7 +218,7 @@ namespace UsersAndRolesDemo.Controllers
             CreateTokenProvider(manager, PASSWORD_RESET);
 
             var code = manager.GeneratePasswordResetToken(user.Id);
-            var callbackUrl = Url.Action("ResetPassword", "Home",
+            var callbackUrl = Url.Action("ResetPassword", "Account",
                                          new { userId = user.Id, code = code },
                                          protocol: Request.Url.Scheme);
             string mail = "Please reset your password by clicking <a href=\""

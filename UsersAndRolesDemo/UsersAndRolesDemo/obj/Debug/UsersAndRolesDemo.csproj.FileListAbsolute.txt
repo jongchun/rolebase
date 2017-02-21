@@ -404,3 +404,8 @@ D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\Newtonsoft.Json.dll
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.dll
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\Newtonsoft.Json.xml
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.pdb
+D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\SendGrid.xml
