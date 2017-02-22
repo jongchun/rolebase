@@ -95,6 +95,16 @@ namespace UsersAndRolesDemo.Controllers
         [AllowAnonymous]
         public ActionResult Register(RegisteredUserVM newUser)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            //RECAPTCHA CODE HERE...
+            CaptchaHelper captchaHelper = new CaptchaHelper();
+            string captchaResponse = captchaHelper.CheckRecaptcha();
+            //ViewBag.CaptchaResponse = captchaResponse;
+
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore)
             {
@@ -217,6 +227,16 @@ namespace UsersAndRolesDemo.Controllers
         [AllowAnonymous]
         public ActionResult ForgotPassword(ForgotPasswordVM model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            //RECAPTCHA CODE HERE...
+            CaptchaHelper captchaHelper = new CaptchaHelper();
+            string captchaResponse = captchaHelper.CheckRecaptcha();
+            //ViewBag.CaptchaResponse = captchaResponse;
+
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             var user = manager.FindByEmail(model.Email);
