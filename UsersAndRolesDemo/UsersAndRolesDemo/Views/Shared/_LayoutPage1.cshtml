@@ -52,6 +52,7 @@
                             if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
                                 @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Members", "GetUsers", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
                             }

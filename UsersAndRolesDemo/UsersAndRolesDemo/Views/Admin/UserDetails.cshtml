@@ -1,0 +1,227 @@
+﻿@model UsersAndRolesDemo.AspNetUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AspNetUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwoFactorEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEndDateUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.directDepositRouting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.directDepositRouting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.directDepositBank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.directDepositBank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.directDepositAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.directDepositAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cellPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cellPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.profilePicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profilePicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hireDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.officePhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.officePhone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditUser", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "GetUsers")
+</p>
