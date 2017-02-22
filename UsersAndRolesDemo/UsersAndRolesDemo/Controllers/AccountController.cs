@@ -42,6 +42,11 @@ namespace UsersAndRolesDemo.Controllers
             {
                 if (ValidLogin(login))
                 {
+                    //RECAPTCHA CODE HERE...
+                    CaptchaHelper captchaHelper = new CaptchaHelper();
+                    string captchaResponse = captchaHelper.CheckRecaptcha();
+                    ViewBag.CaptchaResponse = captchaResponse;
+
                     IAuthenticationManager authenticationManager
                                            = HttpContext.GetOwinContext()
                                             .Authentication;
