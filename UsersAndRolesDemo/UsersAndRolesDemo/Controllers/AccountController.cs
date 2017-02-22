@@ -3,11 +3,13 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using UsersAndRolesDemo.Models;
+using UsersAndRolesDemo.Repositories;
 using UsersAndRolesDemo.Services;
 
 namespace UsersAndRolesDemo.Controllers
@@ -33,10 +35,8 @@ namespace UsersAndRolesDemo.Controllers
         {
             // UserStore and UserManager manages data retreival.
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager
-            = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.Find(login.UserName,
-                                                             login.Password);
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.Find(login.UserName, login.Password);
 
             if (ModelState.IsValid)
             {
@@ -63,13 +63,13 @@ namespace UsersAndRolesDemo.Controllers
                     {
                         IsPersistent = false
                     }, identity);
-                    var test = identityUser.Roles.ElementAt(0).RoleId;
-                    if (test == "Owner")
+                    var role = identityUser.Roles.ElementAt(0).RoleId;
+                    if (role == "Owner")
                     {
                         //System.Threading.Thread.Sleep(2000);
                         return RedirectToAction("Index", "Owner");
                     }
-                    else if (test == "Admin")
+                    else if (role == "Admin")
                     {
                         //System.Threading.Thread.Sleep(2000);
                         return RedirectToAction("Index", "Admin");
@@ -252,7 +252,7 @@ namespace UsersAndRolesDemo.Controllers
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             var user = manager.FindById(model.UserID);
             CreateTokenProvider(manager, PASSWORD_RESET);
-
+            
             IdentityResult result = manager.ResetPassword(model.UserID, model.Code, model.Password);
             if (result.Succeeded)
                 ViewBag.Result = "The password has been reset.";
@@ -261,6 +261,36 @@ namespace UsersAndRolesDemo.Controllers
             return View();
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public ActionResult AdminProfile()
+        {
+            var n = User.Identity.Name;
+            Repo rp = new Repo();
+            AdminProfileVM user = rp.GetAdmin(n);
 
+            return View(user);
+        }
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult AdminProfile(AdminProfileVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            Repo rp = new Repo();
+            if (rp.UpdateAdmin(model))
+            {
+                ViewBag.Message = "Updated.";
+            }else
+            {
+                ViewBag.Message = "Updated failed.";
+            }
+
+            //return RedirectToAction("Index");
+            return View();
+                
+        }
     }
 }

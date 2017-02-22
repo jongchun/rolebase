@@ -34,5 +34,7 @@ namespace UsersAndRolesDemo
         public virtual DbSet<PropertyImage> PropertyImages { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+
+        public System.Data.Entity.DbSet<UsersAndRolesDemo.Models.AdminProfileVM> AdminProfileVMs { get; set; }
     }
 }

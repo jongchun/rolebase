@@ -276,6 +276,7 @@
     <Compile Include="PropertyImage.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\Repo.cs" />
     <Compile Include="Reservation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -318,6 +319,7 @@
     <Content Include="Views\Admin\UserDetails.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Admin\GetUsers.cshtml" />
+    <Content Include="Views\Account\AdminProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

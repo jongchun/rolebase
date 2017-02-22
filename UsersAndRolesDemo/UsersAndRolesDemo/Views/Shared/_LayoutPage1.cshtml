@@ -6,8 +6,6 @@
     <title>@ViewBag.Title</title>
     <link href="~/Content/site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
@@ -32,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         @{
+                            @Html.Raw("<li>");@Html.ActionLink("Main", "Index", "Home");@Html.Raw("</li>");
+                            @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
                             if (!Request.IsAuthenticated)
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Home", "Index", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
@@ -44,24 +42,28 @@
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Owner"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Index", "Index", "Owner");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("My Properties", "Index", "Owner");@Html.Raw("</li>");
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Admin"))
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("Index", "Index", "Admin");@Html.Raw("</li>");
-                            }
-                            if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                            {
-                                @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Admin", "Index", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Members", "GetUsers", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
                             }
-                            if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Owner")))
+                            if (Request.IsAuthenticated)
                             {
-                                @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "Profile", "Account");@Html.Raw("</li>");
+                                if (User.IsInRole("Admin"))
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "AdminProfile", "Account");@Html.Raw("</li>");
+                                }
+                                if (User.IsInRole("Owner"))
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "OwnerProfile", "Account");@Html.Raw("</li>");
+                                }
                                 @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Account");@Html.Raw("</li>");
                             }
+                            
                         }
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -75,5 +77,7 @@
     <div class="container">
         @RenderBody()
     </div>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

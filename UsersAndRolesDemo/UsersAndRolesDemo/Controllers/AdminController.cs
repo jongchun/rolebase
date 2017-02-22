@@ -54,14 +54,13 @@ namespace UsersAndRolesDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                MyDbEntities context = new MyDbEntities();
-                AspNetUser user = context.AspNetUsers
+                AspNetUser user = db.AspNetUsers
                                     .Where(u => u.UserName == userRoleVM.UserName).FirstOrDefault();
-                AspNetRole role = context.AspNetRoles
+                AspNetRole role = db.AspNetRoles
                                     .Where(r => r.Name == userRoleVM.RoleName).FirstOrDefault();
 
                 user.AspNetRoles.Add(role);
-                context.SaveChanges();
+                db.SaveChanges();
             }
             return View();
         }
