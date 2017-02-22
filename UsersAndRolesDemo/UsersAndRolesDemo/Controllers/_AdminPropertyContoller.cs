@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using UsersAndRolesDemo;
+using System.Web.Http.Cors;
 
 namespace UsersAndRolesDemo.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class _AdminPropertyContoller : ApiController
     {
         private MyDbEntities db = new MyDbEntities();
@@ -81,10 +83,23 @@ namespace UsersAndRolesDemo.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+                db.Properties.Add(property);
             }
-
-            db.Properties.Add(property);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (PropertyExists(property.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = property.Id }, property);
         }
@@ -97,6 +112,10 @@ namespace UsersAndRolesDemo.Controllers
             if (property == null)
             {
                 return NotFound();
+            }
+            else if (db.Properties.Where(p => p.UserId == property.UserId).Count() > 0)
+            {
+                return Content(HttpStatusCode.Conflict, "A foreign key reference exists.");
             }
 
             db.Properties.Remove(property);
