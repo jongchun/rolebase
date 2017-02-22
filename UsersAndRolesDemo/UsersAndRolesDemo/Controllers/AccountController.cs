@@ -310,7 +310,38 @@ namespace UsersAndRolesDemo.Controllers
 
             //return RedirectToAction("Index");
             return View();
-                
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Owner")]
+        public ActionResult OwnerProfile()
+        {
+            var n = User.Identity.Name;
+            Repo rp = new Repo();
+            OwnerProfileVM user = rp.GetOwner(n);
+
+            return View(user);
+        }
+        [HttpPost]
+        [Authorize(Roles = "Owner")]
+        public ActionResult OwnerProfile(OwnerProfileVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            Repo rp = new Repo();
+            if (rp.UpdateOwner(model))
+            {
+                ViewBag.Message = "Updated.";
+            }
+            else
+            {
+                ViewBag.Message = "Updated failed.";
+            }
+
+            //return RedirectToAction("Index");
+            return View();
         }
     }
 }

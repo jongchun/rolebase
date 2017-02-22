@@ -8,6 +8,8 @@ namespace UsersAndRolesDemo.Models
 {
     public class OwnerProfileVM
     {
+        public string Id { get; set; }
+
         [Display(Name = "Profile Picture")]
         public byte[] ProfilePicture { get; set; }
 
@@ -29,12 +31,14 @@ namespace UsersAndRolesDemo.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Current Password")]
+        public string CurrentPassword { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "New Password")]
         public string Password { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password Confirm")]
         [Compare("Password", ErrorMessage = "The new password and confirmation password do not match.")]
