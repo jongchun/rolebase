@@ -4,6 +4,7 @@ using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
@@ -45,7 +46,7 @@ namespace UsersAndRolesDemo.Controllers
                 string captchaResponse = captchaHelper.CheckRecaptcha();
                 ViewBag.CaptchaResponse = captchaResponse;
 
-                if (ValidLogin(login))
+                if (ValidLogin(login) && captchaResponse == "Valid")
                 {
                     IAuthenticationManager authenticationManager
                                            = HttpContext.GetOwinContext()
@@ -103,39 +104,42 @@ namespace UsersAndRolesDemo.Controllers
             //RECAPTCHA CODE HERE...
             CaptchaHelper captchaHelper = new CaptchaHelper();
             string captchaResponse = captchaHelper.CheckRecaptcha();
-            //ViewBag.CaptchaResponse = captchaResponse;
+            ViewBag.CaptchaResponse = captchaResponse;
 
-            var userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore)
+            if (captchaResponse == "Valid")
             {
-                UserLockoutEnabledByDefault = true,
-                DefaultAccountLockoutTimeSpan = new TimeSpan(0, 10, 0),
-                MaxFailedAccessAttemptsBeforeLockout = 5
-            };
+                var userStore = new UserStore<IdentityUser>();
+                UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore)
+                {
+                    UserLockoutEnabledByDefault = true,
+                    DefaultAccountLockoutTimeSpan = new TimeSpan(0, 10, 0),
+                    MaxFailedAccessAttemptsBeforeLockout = 5
+                };
 
-            var identityUser = new IdentityUser()
-            {
-                UserName = newUser.UserName,
-                Email = newUser.Email
-            };
-            IdentityResult result = manager.Create(identityUser, newUser.Password);
+                var identityUser = new IdentityUser()
+                {
+                    UserName = newUser.UserName,
+                    Email = newUser.Email
+                };
+                IdentityResult result = manager.Create(identityUser, newUser.Password);
 
-            if (result.Succeeded)
-            {
-                CreateTokenProvider(manager, EMAIL_CONFIRMATION);
+                if (result.Succeeded)
+                {
+                    CreateTokenProvider(manager, EMAIL_CONFIRMATION);
 
-                var code = manager.GenerateEmailConfirmationToken(identityUser.Id);
-                var callbackUrl = Url.Action("ConfirmEmail", "Account",
-                                                new { userId = identityUser.Id, code = code },
-                                                    protocol: Request.Url.Scheme);
+                    var code = manager.GenerateEmailConfirmationToken(identityUser.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account",
+                                                    new { userId = identityUser.Id, code = code },
+                                                        protocol: Request.Url.Scheme);
 
-                string email = "Please confirm your account by clicking this link: <a href=\""
-                                + callbackUrl + "\">Confirm Registration</a>";
-                
-                EmailService es = new EmailService();
-                es.SendEmail(newUser.Email, "Confirm Registration", email);
-                ViewBag.Confirmation = "We sent the confirm registration email. Please check the email first.";
+                    string email = "Please confirm your account by clicking this link: <a href=\""
+                                    + callbackUrl + "\">Confirm Registration</a>";
 
+                    EmailService es = new EmailService();
+                    es.SendEmail(newUser.Email, "Confirm Registration", email);
+                    ViewBag.Confirmation = "We sent the confirm registration email. Please check the email first.";
+
+                }
             }
             return View();
         }
@@ -235,23 +239,26 @@ namespace UsersAndRolesDemo.Controllers
             //RECAPTCHA CODE HERE...
             CaptchaHelper captchaHelper = new CaptchaHelper();
             string captchaResponse = captchaHelper.CheckRecaptcha();
-            //ViewBag.CaptchaResponse = captchaResponse;
+            ViewBag.CaptchaResponse = captchaResponse;
 
-            var userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            var user = manager.FindByEmail(model.Email);
-            CreateTokenProvider(manager, PASSWORD_RESET);
+            if (captchaResponse == "Valid")
+            {
+                var userStore = new UserStore<IdentityUser>();
+                UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+                var user = manager.FindByEmail(model.Email);
+                CreateTokenProvider(manager, PASSWORD_RESET);
 
-            var code = manager.GeneratePasswordResetToken(user.Id);
-            var callbackUrl = Url.Action("ResetPassword", "Account",
-                                         new { userId = user.Id, code = code },
-                                         protocol: Request.Url.Scheme);
-            string mail = "Please reset your password by clicking <a href=\""
-                                     + callbackUrl + "\">here</a>";
-            EmailService es = new EmailService();
-            es.SendEmail(model.Email, "Password Reset", mail);
+                var code = manager.GeneratePasswordResetToken(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account",
+                                             new { userId = user.Id, code = code },
+                                             protocol: Request.Url.Scheme);
+                string mail = "Please reset your password by clicking <a href=\""
+                                         + callbackUrl + "\">here</a>";
+                EmailService es = new EmailService();
+                es.SendEmail(model.Email, "Password Reset", mail);
 
-            ViewBag.EmailMessage = "We sent the password reset email. Please check the email.";
+                ViewBag.EmailMessage = "We sent the password reset email. Please check the email.";
+            }
             return View();
         }
 
@@ -293,11 +300,23 @@ namespace UsersAndRolesDemo.Controllers
         }
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public ActionResult AdminProfile(AdminProfileVM model)
+        public ActionResult AdminProfile([Bind(Exclude = "ProfilePicture")]AdminProfileVM model)
         {
             if (!ModelState.IsValid)
             {
                 return View();
+            }
+
+            byte[] profileImage = null;
+            if(Request.Files.Count > 0)
+            {
+                HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
+
+                using (var binary = new BinaryReader(poImgFile.InputStream))
+                {
+                    profileImage = binary.ReadBytes(poImgFile.ContentLength);
+                }
+                model.ProfilePicture = profileImage;
             }
             Repo rp = new Repo();
             if (rp.UpdateAdmin(model))
@@ -324,12 +343,25 @@ namespace UsersAndRolesDemo.Controllers
         }
         [HttpPost]
         [Authorize(Roles = "Owner")]
-        public ActionResult OwnerProfile(OwnerProfileVM model)
+        public ActionResult OwnerProfile([Bind(Exclude = "ProfilePicture")]OwnerProfileVM model)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
+
+            byte[] profileImage = null;
+            if (Request.Files.Count > 0)
+            {
+                HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
+
+                using (var binary = new BinaryReader(poImgFile.InputStream))
+                {
+                    profileImage = binary.ReadBytes(poImgFile.ContentLength);
+                }
+                model.ProfilePicture = profileImage;
+            }
+
             Repo rp = new Repo();
             if (rp.UpdateOwner(model))
             {
@@ -342,6 +374,29 @@ namespace UsersAndRolesDemo.Controllers
 
             //return RedirectToAction("Index");
             return View();
+        }
+
+        public FileContentResult UserPhotos()
+        {
+            string userName = User.Identity.GetUserName();
+            AspNetUser user = db.AspNetUsers.Where(a => a.UserName == userName).FirstOrDefault();
+
+            if (user.profilePicture != null)
+            {
+                return new FileContentResult(user.profilePicture, "image/jpeg");
+            }
+            else
+            {
+                string fileName = HttpContext.Server.MapPath(@"~/Content/Images/no_profile_image.png");
+
+                byte[] imageData = null;
+                FileInfo fileInfo = new FileInfo(fileName);
+                long imageFileLength = fileInfo.Length;
+                FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imageData = br.ReadBytes((int)imageFileLength);
+                return File(imageData, "image/png");
+            }
         }
     }
 }

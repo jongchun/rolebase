@@ -35,6 +35,7 @@
             <label class = "control-label col-md-2"></label>
             <div class="col-md-10">
                 <div class="g-recaptcha inp50" data-sitekey="6LeqchYUAAAAAKUy1co7TYwIZPN5vA2svV-r8JfB"></div>
+                <span class="text-danger">@Html.Raw(ViewBag.CaptchaResponse)</span>
             </div>
         </div>
         <div class="form-group">
@@ -45,4 +46,3 @@
         </div>
     </div>
 }
-@Html.Raw(ViewBag.CaptchaResponse)

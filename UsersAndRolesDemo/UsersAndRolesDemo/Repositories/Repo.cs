@@ -55,7 +55,10 @@ namespace UsersAndRolesDemo.Repositories
             }
             if (result == null || result.Succeeded)
             {
-                user.profilePicture = model.ProfilePicture;
+                if (user.profilePicture != null)
+                {
+                    user.profilePicture = model.ProfilePicture;
+                }
                 user.UserName = model.UserName;
                 user.firstName = model.FirstName;
                 user.lastName = model.LastName;
@@ -66,13 +69,13 @@ namespace UsersAndRolesDemo.Repositories
                 user.city = model.City;
                 user.region = model.Region;
                 user.postalCode = model.PostalCode;
-                user.hireDate = model.HireDate;
+                //user.hireDate = model.HireDate;
 
                 db.Entry(user).State = EntityState.Modified;
                 try
                 {
                     db.SaveChanges();
-                }catch(Exception e)
+                }catch(Exception)
                 {
                     return false;
                 }
@@ -120,7 +123,10 @@ namespace UsersAndRolesDemo.Repositories
             }
             if (result == null || result.Succeeded)
             {
-                user.profilePicture = model.ProfilePicture;
+                if (model.ProfilePicture != null)
+                {
+                    user.profilePicture = model.ProfilePicture;
+                }
                 user.UserName = model.UserName;
                 user.firstName = model.FirstName;
                 user.lastName = model.LastName;
@@ -140,7 +146,7 @@ namespace UsersAndRolesDemo.Repositories
                 {
                     db.SaveChanges();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return false;
                 }

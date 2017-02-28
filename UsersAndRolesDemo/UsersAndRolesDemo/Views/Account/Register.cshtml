@@ -13,9 +13,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RegisteredUserVM</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <span>@ViewBag.Confirmation</span>
+
         <div class="form-group">
             @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -51,6 +53,7 @@
             <label class="control-label col-md-2"></label>
             <div class="col-md-10">
                 <div class="g-recaptcha inp50" data-sitekey="6LeqchYUAAAAAKUy1co7TYwIZPN5vA2svV-r8JfB"></div>
+                <span class="text-danger">@ViewBag.CaptchaResponse</span>
             </div>
         </div>
         <div class="form-group">
@@ -59,5 +62,4 @@
             </div>
         </div>
     </div>
-    <span>@ViewBag.Confirmation</span>
 }
