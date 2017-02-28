@@ -5,110 +5,29 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Property</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.propertyType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.propertyType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numBedrooms)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numBedrooms)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.numWashrooms)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.numWashrooms)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.kitchen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.kitchen)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.baseRate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.baseRate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.builtYear)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.builtYear)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.smokingAllowed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.smokingAllowed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.maxNumberGuests)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.maxNumberGuests)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.availableDates)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.availableDates)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dimensions)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dimensions)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AspNetUser.Email)
-        </dd>
-
-    </dl>
+<div class="panel panel-default">
+<div class="panel-body">
+    <div>@Html.DisplayFor(model => model.summary)</div>
+    <div>@Html.DisplayFor(model => model.builtYear)</div>
+    <div>@Html.DisplayFor(model => model.address)</div>
+    <div>Price: @Html.DisplayFor(model => model.baseRate)/Day</div>
+    
 </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Property Details</div>
+    <div class="panel-body">
+        <div class="col-xs-12 col-sm-4">Type: @Html.DisplayFor(model => model.propertyType)</div>
+        <div class="col-xs-12 col-sm-4">Demensions: @Html.DisplayFor(model => model.dimensions)</div>
+        <div class="col-xs-12 col-sm-4">Bedrooms: @Html.DisplayFor(model => model.numBedrooms)</div>
+        <div class="col-xs-12 col-sm-4">Bathroom: @Html.DisplayFor(model => model.numWashrooms)</div>
+        <div class="col-xs-12 col-sm-4">Kitchen: @Html.DisplayFor(model => model.kitchen)</div>
+        <div class="col-xs-12 col-sm-4">Max Sleeps: @Html.DisplayFor(model => model.maxNumberGuests)</div>
+        <div class="col-xs-12 col-sm-4">Smoking Allowed: @Html.DisplayFor(model => model.smokingAllowed)</div>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
