@@ -47,6 +47,40 @@ namespace UsersAndRolesDemo.Repositories
             }
             return true;
         }
+
+        public PostPropertyVM GetProperty(int id)
+        {
+            Property property = db.Properties.Find(id);
+           
+
+            PostPropertyVM propertyVM = new PostPropertyVM();
+            propertyVM.PropertyType = property.propertyType;
+            propertyVM.Summary = property.summary;
+            propertyVM.NumBedrooms = (int)property.numBedrooms;
+            propertyVM.NumWashrooms = (int)property.numWashrooms;
+            propertyVM.Kitchen = (int)property.kitchen;
+            propertyVM.BaseRate = (int)property.baseRate;
+            propertyVM.Address = property.address;
+            propertyVM.BuiltYear = property.builtYear;
+            propertyVM.SmokingAllowed = property.smokingAllowed;
+            propertyVM.MaxNumberGuests = property.maxNumberGuests;
+            propertyVM.AvailableDates = (DateTime)property.availableDates;
+            propertyVM.Dimensions = property.dimensions;
+
+            return propertyVM;
+        }
+
+
+        public Boolean EditProperty(PostPropertyVM property, int id)
+        {
+           // Property property = db.Properties.Find(id);
+            AspNetUser user = db.AspNetUsers
+                       .Where(a => a.Id == property.i).FirstOrDefault();
+
+            var userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            return false;
+        }
     }
 }
     
