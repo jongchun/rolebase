@@ -119,5 +119,63 @@ namespace UsersAndRolesDemo.Controllers
 
             return View();
         }
+
+        // GET: Home/Create
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create()
+        {
+            //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email");
+            return View();
+        }
+
+        // POST: Home/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
+        public ActionResult Create(PostPropertyVM property)
+        {
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager
+            = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
+
+            //IdentityUser identityUser = manager.Find(login.UserName,
+            //                                                 login.Password);
+            //string user = User.Identity.GetUserId();
+            if (ModelState.IsValid)
+            {
+                //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+                //UserManager<IdentityUser> manager
+                //= new UserManager<IdentityUser>(userStore);
+                //IdentityUser identityUser = manager.Find(login.UserName,
+                //                                                 login.Password);
+
+                var test = new Property
+                {
+                    UserId = identityUser.Id,
+                    summary = property.Summary,
+                    propertyType = property.PropertyType,
+                    numBedrooms = property.NumBedrooms,
+                    numWashrooms = property.NumWashrooms,
+                    kitchen = property.Kitchen,
+                    baseRate = property.BaseRate,
+                    address = property.Address,
+                    builtYear = property.BuiltYear,
+                    smokingAllowed = property.SmokingAllowed,
+                    maxNumberGuests = property.MaxNumberGuests,
+                    availableDates = property.AvailableDates,
+                    dimensions = property.Dimensions
+                };
+                db.Properties.Add(test);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
+            return View(property);
+        }
     }
 }
