@@ -1,23 +1,60 @@
-﻿
+﻿@model UsersAndRolesDemo.Models.Contact
+
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
+<div>
+    <address>
+        4010 Whistler Way <br />
+        Whistler, BC V0N 1B4 Canada<br /><br />
+        <abbr title="TollFreePhone">Phone (Toll free): </abbr>
+        1.888.869.2777<br />
+        <abbr title="Phone">Phone: </abbr>
+        1.604.932.3928<br />
+        <abbr title="OfficeHour">Office Hours: </abbr>
+        Monday - Friday 8:30 AM – 5:00 PM PST
+    </address>
 
-<address>
-    4010 Whistler Way <br />
-    Whistler, BC V0N 1B4 Canada<br /><br />
-    <abbr title="TollFreePhone">Phone (Toll free): </abbr>
-    1.888.869.2777<br />
-    <abbr title="Phone">Phone: </abbr>
-    1.604.932.3928<br />
-    <abbr title="OfficeHour">Office Hours: </abbr>
-    Monday - Friday 8:30 AM – 5:00 PM PST
-</address>
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</div>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title)
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message)
+            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+        </div>
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+}

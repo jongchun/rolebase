@@ -11,6 +11,7 @@ namespace UsersAndRolesDemo.Models
   
         [Required]
         [Display(Name = "Summary")]
+        [DataType(DataType.MultilineText)]
         public string Summary { get; set; }
 
         [Required]
