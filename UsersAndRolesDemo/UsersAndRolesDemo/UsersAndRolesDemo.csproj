@@ -173,6 +173,14 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\cabin.jpg" />
+    <Content Include="Images\cabin2.jpg" />
+    <Content Include="Images\cabin3.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logoless.jpg" />
+    <Content Include="Images\STSC.ico" />
+    <Content Include="Images\STSC.jpg" />
+    <Content Include="Images\STSC_logo.png" />
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
