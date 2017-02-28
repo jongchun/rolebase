@@ -13,7 +13,7 @@ using UsersAndRolesDemo.Models;
 
 namespace UsersAndRolesDemo.Repositories
 {
-    public class AdminRepo
+    public class AccountRepo
     {
         private MyDbEntities db = new MyDbEntities();
 

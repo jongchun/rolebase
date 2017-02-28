@@ -293,7 +293,7 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult AdminProfile()
         {
             var n = User.Identity.Name;
-            AdminRepo rp = new AdminRepo();
+            AccountRepo rp = new AccountRepo();
             AdminProfileVM user = rp.GetAdmin(n);
 
             return View(user);
@@ -318,7 +318,7 @@ namespace UsersAndRolesDemo.Controllers
                 }
                 model.ProfilePicture = profileImage;
             }
-            AdminRepo rp = new AdminRepo();
+            AccountRepo rp = new AccountRepo();
             if (rp.UpdateAdmin(model))
             {
                 ViewBag.Message = "Updated.";
@@ -336,7 +336,7 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult OwnerProfile()
         {
             var n = User.Identity.Name;
-            AdminRepo rp = new AdminRepo();
+            AccountRepo rp = new AccountRepo();
             OwnerProfileVM user = rp.GetOwner(n);
 
             return View(user);
@@ -362,7 +362,7 @@ namespace UsersAndRolesDemo.Controllers
                 model.ProfilePicture = profileImage;
             }
 
-            AdminRepo rp = new AdminRepo();
+            AccountRepo rp = new AccountRepo();
             if (rp.UpdateOwner(model))
             {
                 ViewBag.Message = "Updated.";
