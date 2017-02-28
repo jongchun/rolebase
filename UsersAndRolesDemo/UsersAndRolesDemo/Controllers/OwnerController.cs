@@ -171,7 +171,7 @@ namespace UsersAndRolesDemo.Controllers
                     kitchen = property.Kitchen,
                     baseRate = property.BaseRate,
                     address = property.Address,
-                    builtYear = property.BuiltYear,
+                    builtYear = property.BuiltYear, 
                     smokingAllowed = property.SmokingAllowed,
                     maxNumberGuests = property.MaxNumberGuests,
                     availableDates = property.AvailableDates,
