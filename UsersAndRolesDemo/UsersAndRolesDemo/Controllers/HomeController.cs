@@ -139,7 +139,7 @@ namespace UsersAndRolesDemo.Controllers
             {
                 EmailService es = new EmailService();
                 es.ContactUS(contact);
-                ViewBag.Message = "Email sent successfully.";
+                ViewBag.Messages = "Email sent successfully.";
             }
 
             return View();
