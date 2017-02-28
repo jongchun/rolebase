@@ -22,6 +22,7 @@ namespace UsersAndRolesDemo.Repositories
 
             var test = new Property
             {
+                Id = property.Id,
                 UserId = identityUser.Id,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
@@ -53,7 +54,8 @@ namespace UsersAndRolesDemo.Repositories
             Property property = db.Properties.Find(id);
 
             PostPropertyVM propertyVM = new PostPropertyVM();
-            propertyVM.Id = id;
+            
+            propertyVM.Id =property.Id;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
@@ -71,11 +73,11 @@ namespace UsersAndRolesDemo.Repositories
         }
 
 
-        public Boolean EditProperty(PostPropertyVM property, int id)
+        public Boolean EditProperty(PostPropertyVM property, int Id)
         {
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
-                       .Where(a => a.Id == property.i).FirstOrDefault();
+                       .Where(a => a.Id == property.Id).FirstOrDefault();
 
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
