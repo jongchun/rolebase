@@ -290,6 +290,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\AdminRepo.cs" />
+    <Compile Include="Repositories\OwnerRepo.cs" />
     <Compile Include="Reservation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
