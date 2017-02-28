@@ -15,107 +15,107 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
-    <div>
-        <nav class="navbar-inverse navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("STSC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        @{
-                            @Html.Raw("<li>");@Html.ActionLink("Main", "Index", "Home");@Html.Raw("</li>");
-                            @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
-                            if (!Request.IsAuthenticated)
-                            {
-                                @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Contact", "Contact", "Home");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Infomation", "Info", "Home");@Html.Raw("</li>");
-
-                            }
-                            if (Request.IsAuthenticated && User.IsInRole("Owner"))
-                            {
-                                @Html.Raw("<li>");@Html.ActionLink("My Properties", "Index", "Owner");@Html.Raw("</li>");
-                            }
-                            if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                            {
-                                @Html.Raw("<li>");@Html.ActionLink("Admin", "Index", "Admin");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Members", "GetUsers", "Admin");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
-                                @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
-                            }
-                            if (Request.IsAuthenticated)
-                            {
-                                if (User.IsInRole("Admin"))
-                                {
-                                    @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "AdminProfile", "Account");@Html.Raw("</li>");
-                                }
-                                if (User.IsInRole("Owner"))
-                                {
-                                    @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "OwnerProfile", "Account");@Html.Raw("</li>");
-                                }
-                                @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Account");@Html.Raw("</li>");
-                            }
-                            
-                        }
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-    </div>
-
     <div class="container">
-        @RenderBody()
-    </div>
-    @*<script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+        <div>
+            <nav class="navbar-inverse navbar-default" style="background-color:black;">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("STSC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
 
-    <footer class="about">
-        <div class="panel panel-default">
-            <div class="panel-footer" style="padding:0">
-                <div class="row" id="homeFooter">
-                    <div class="col-sm-6">
-                        <h3> About Us</h3>
-                        <p class="col-sm-1" />
-                        <p class="col-sm-10">
-                            Luxury rental cabins located throughout the Sea to Sky corridor, Our Service has been praised by our loyal costumers and new guests. Our properties are increasing in Wistler area. Book your stay with us today!
-                        </p>
-                        <p class="col-sm-1" />
-                    </div>
-                    <div class="col-sm-6">
-                        <h3> Contact US </h3>
-                        <p> 4010 Whistler Way Whistler, BC V0N 1B4 Canada</p>
-                        <p>Phone (Toll free)1.888.869.2777</p>
-                        <p>Phone (Whistler local)1.604.932.3928</p>
-                        <p> Office HoursMonday - Friday, 8:30 AM – 5:00 PM PST</p>
-                        <!--need to fix these glyphicons
-                        <i class="glyphicon social-twitter"> </i>
-                        <ul class="social">
-                            <li> <a href="https://twitter.com/login"> <i class="glyphicon social-twitter"> </i> </a> </li>
-                            <li> <a href="https://google.ca/login"> <i class="glyphicon social-google-plus"></i> </a> </li>
-                            <li> <a href="https://www.facebook.com/"> <i class="glyphicon social-facebook"></i></a></li>
-                            <li> <a href="https://www.youtube.com/"> <i class="glyphicon social-youtube"> </i> </a> </li>
-                        </ul>-->
-                    </div>
-                </div>
-                <!--/.row-->
-                <!--/.footer-bottom-->
-            </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            @{
+                                @Html.Raw("<li>");@Html.ActionLink("Main", "Index", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
+                                if (!Request.IsAuthenticated)
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Contact", "Contact", "Home");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Infomation", "Info", "Home");@Html.Raw("</li>");
+
+                                }
+                                if (Request.IsAuthenticated && User.IsInRole("Owner"))
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("My Properties", "Index", "Owner");@Html.Raw("</li>");
+                                }
+                                if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("Admin", "Index", "Admin");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Members", "GetUsers", "Admin");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
+                                    @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
+                                }
+                                if (Request.IsAuthenticated)
+                                {
+                                    if (User.IsInRole("Admin"))
+                                    {
+                                        @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "AdminProfile", "Account");@Html.Raw("</li>");
+                                    }
+                                    if (User.IsInRole("Owner"))
+                                    {
+                                        @Html.Raw("<li>");@Html.ActionLink("[" + User.Identity.Name + "]", "OwnerProfile", "Account");@Html.Raw("</li>");
+                                    }
+                                    @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Account");@Html.Raw("</li>");
+                                }
+
+                            }
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right"></ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
         </div>
-    </footer>
+
+        <div>
+            @RenderBody()
+        </div>
+        @*<script src="~/Scripts/jquery.validate.min.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+        <footer class="about">
+            <div class="panel panel-default">
+                <div class="panel-footer" style="padding:0">
+                    <div class="row" id="homeFooter">
+                        <div class="col-sm-6">
+                            <h3> About Us</h3>
+                            <p class="col-sm-1" />
+                            <p class="col-sm-10">
+                                Luxury rental cabins located throughout the Sea to Sky corridor, Our Service has been praised by our loyal costumers and new guests. Our properties are increasing in Wistler area. Book your stay with us today!
+                            </p>
+                            <p class="col-sm-1" />
+                        </div>
+                        <div class="col-sm-6">
+                            <h3> Contact US </h3>
+                            <p> 4010 Whistler Way Whistler, BC V0N 1B4 Canada</p>
+                            <p>Phone (Toll free)1.888.869.2777</p>
+                            <p>Phone (Whistler local)1.604.932.3928</p>
+                            <p> Office HoursMonday - Friday, 8:30 AM – 5:00 PM PST</p>
+                            <!--need to fix these glyphicons
+                            <i class="glyphicon social-twitter"> </i>
+                            <ul class="social">
+                                <li> <a href="https://twitter.com/login"> <i class="glyphicon social-twitter"> </i> </a> </li>
+                                <li> <a href="https://google.ca/login"> <i class="glyphicon social-google-plus"></i> </a> </li>
+                                <li> <a href="https://www.facebook.com/"> <i class="glyphicon social-facebook"></i></a></li>
+                                <li> <a href="https://www.youtube.com/"> <i class="glyphicon social-youtube"> </i> </a> </li>
+                            </ul>-->
+                        </div>
+                    </div>
+                    <!--/.row-->
+                    <!--/.footer-bottom-->
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
