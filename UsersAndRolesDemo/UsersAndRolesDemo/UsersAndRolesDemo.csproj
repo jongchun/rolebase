@@ -165,7 +165,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\custom2.css" />
     <Content Include="Content\Images\no_profile_image.png" />
+    <Content Include="Content\img.css" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -173,14 +176,14 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Images\cabin.jpg" />
-    <Content Include="Images\cabin2.jpg" />
-    <Content Include="Images\cabin3.jpg" />
-    <Content Include="Images\logo.png" />
-    <Content Include="Images\logoless.jpg" />
-    <Content Include="Images\STSC.ico" />
-    <Content Include="Images\STSC.jpg" />
-    <Content Include="Images\STSC_logo.png" />
+    <Content Include="Content\Images\cabin.jpg" />
+    <Content Include="Content\Images\cabin2.jpg" />
+    <Content Include="Content\Images\cabin3.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logoless.jpg" />
+    <Content Include="Content\Images\STSC.ico" />
+    <Content Include="Content\Images\STSC.jpg" />
+    <Content Include="Content\Images\STSC_logo.png" />
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>

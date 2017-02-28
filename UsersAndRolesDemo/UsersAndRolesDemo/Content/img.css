@@ -1,0 +1,11 @@
+﻿.property-img {
+    width: 800px;
+    height: 533px;
+}
+.property-img-index {
+    width: 360px;
+    height: 256px;
+}
+.img-alignment{
+    align-items: center;
+}
