@@ -132,6 +132,7 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             PostPropertyVM propertyVM = new PostPropertyVM();
+            propertyVM.Id = id;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
@@ -164,6 +165,7 @@ namespace UsersAndRolesDemo.Controllers
             {
                 var test = new Property
                 {
+                    Id = property.Id,
                     UserId = identityUser.Id,
                     propertyType = property.PropertyType,
                     numBedrooms = property.NumBedrooms,
