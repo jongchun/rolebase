@@ -10,7 +10,6 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using UsersAndRolesDemo.Models;
-using UsersAndRolesDemo.Services;
 
 namespace UsersAndRolesDemo.Controllers
 {
@@ -121,36 +120,16 @@ namespace UsersAndRolesDemo.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Contact(Contact contact)
+        public ActionResult Info()
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            //RECAPTCHA CODE HERE...
-            CaptchaHelper captchaHelper = new CaptchaHelper();
-            string captchaResponse = captchaHelper.CheckRecaptcha();
-            ViewBag.CaptchaResponse = captchaResponse;
-
-            if (captchaResponse == "Valid")
-            {
-                EmailService es = new EmailService();
-                es.ContactUS(contact);
-                ViewBag.Message = "Email sent successfully.";
-            }
-
             return View();
         }
-        
+
         // GET: Home/Create
         [Authorize(Roles = "Admin")]
-        public ActionResult Create(Contact contact)
+        public ActionResult Create()
         {
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email");
- 
             return View();
         }
 

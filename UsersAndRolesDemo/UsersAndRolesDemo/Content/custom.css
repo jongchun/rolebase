@@ -1,0 +1,86 @@
+﻿.about {
+    text-align: center;
+    color: rgb(255,156,66);
+    margin: 0;
+}
+#homeFooter{
+    background-color:black;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+
+#ownerProfileForm {
+    padding: 15%;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: black;
+    color: rgb(255,156,66);
+    border-radius: 20px;
+}
+
+.containerDiv {
+    background-image: url(../../Images/logoless.jpg);
+    background-size: 100% 100%;
+    padding: 0%;
+    border-radius: 2px;
+}
+
+.titleContainer {
+    background-color:black;
+    color: rgb(255,156,66);
+}
+
+#titleDiv {
+    background-image: url(../../Images/logoless.jpg);
+    background-size: 90% 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+    padding: 2%;
+     
+}
+
+#logoTitle{
+    width: 700px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding-bottom: 450px;
+    padding-top:50px;
+}
+
+.ownerHeader {
+    background-color: #000000;
+    color: white;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 30pt;
+}
+.login-bkgnd{
+    background-color:rgb(255,156,66);
+}
+
+#formFix{
+    margin-top: 2%;
+    background-color: black;
+}
+
+table{
+     border-collapse: collapse;
+     width: 100%;    
+}
+
+th {
+    text-align: center;
+}
+.table table-striped table-responsive, th{
+text-align: left;
+}

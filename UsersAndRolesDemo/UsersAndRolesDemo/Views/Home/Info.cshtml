@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Infomation</h2>
+
+<h3>WEB API Design</h3>
+<p>Web API(Application programmer interfaces) was introduced by Microsoft in ASP.NET 4 to provide a simple and automatic delivery of RESTful content in either XML or JSON format.  Web API: </p>
+<ul>
+    <li>automatically generates JSON from your database content</li>
+    <li>can reside in its own project or in the same web MVC project or web forms project</li>
+</ul>
+<p> REST data is transferred in either XML or JSON (Javascript Object Notation), in our case in form of JSON.</p><br />
+<h4>Part 1: Setup</h4>
+<p>First we will implement an API to our exciting controllers, with read/write actions using the Entity Framework.  We will also create binary references to the EDMX classes.  We also added id features to our API project. The Controller code needed to retrieve an object with a unique reference is already generated. In this case the URL needed to access this method is domain/api/property/id.  </p>
+<h4>Part 2: Configuring the Global Class File</h4>
+<p>Next in order to make our project work properly we configured the Global Class File. We added the following code to our Global.asax file:</p>
+<p>using System.Web.Http;</p>
+<p>Then, add this code to the start of the Application_Start() method in the Global.asax file</p>
+<h4>Part 3: adding java</h4>
+<p>We also created scripts folder, add an app.js file. When the web page has loaded, the JavaScript in this file calls the web api controller and appends objects.</p>
