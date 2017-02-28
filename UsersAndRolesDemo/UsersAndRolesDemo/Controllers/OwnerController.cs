@@ -123,7 +123,7 @@ namespace UsersAndRolesDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            */
+            
             Property property = db.Properties.Find(id);
 
             if (property == null)
@@ -147,7 +147,10 @@ namespace UsersAndRolesDemo.Controllers
             propertyVM.Dimensions = property.dimensions;
 
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
-            return View(propertyVM);
+            */
+            OwnerRepo or = new OwnerRepo();
+            
+            return View(or.GetProperty(id));
         }
 
         // POST: Owner/Edit/5
