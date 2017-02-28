@@ -27,8 +27,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProfilePicture, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                
-                <input type="file" name="ProfilePicture" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" />
+                <label class="btn btn-default btn-file">Browse
+                    <input type="file" name="ProfilePicture" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" style="display: none;" />
+                </label>
                 @Html.ValidationMessageFor(model => model.ProfilePicture, "", new { @class = "text-danger" })
             </div>
         </div>
