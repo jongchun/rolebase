@@ -9,3 +9,6 @@
 .img-alignment{
     align-items: center;
 }
+.imgLink{
+    background: url(Images/logo.png) no-repeat;
+}
