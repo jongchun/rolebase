@@ -51,9 +51,9 @@ namespace UsersAndRolesDemo.Repositories
         public PostPropertyVM GetProperty(int id)
         {
             Property property = db.Properties.Find(id);
-           
 
             PostPropertyVM propertyVM = new PostPropertyVM();
+            propertyVM.Id = id;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
