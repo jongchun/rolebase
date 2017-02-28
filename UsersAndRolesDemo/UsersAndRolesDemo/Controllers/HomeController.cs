@@ -119,5 +119,10 @@ namespace UsersAndRolesDemo.Controllers
 
             return View();
         }
+
+        public ActionResult Information()
+        {
+            return View();
+        }
     }
 }

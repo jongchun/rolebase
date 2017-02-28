@@ -4,11 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/Content/site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
@@ -38,6 +38,7 @@
                                 @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
                                 @Html.Raw("<li>");@Html.ActionLink("Contact", "Contact", "Home");@Html.Raw("</li>");
+                                @Html.Raw("<li>");@Html.ActionLink("Info", "Information", "Home");@Html.Raw("</li>");
 
                             }
                             if (Request.IsAuthenticated && User.IsInRole("Owner"))
