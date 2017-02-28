@@ -12,4 +12,4 @@ namespace UsersAndRolesDemo.Models
         [EmailAddress]
         public string Email { get; set; }
     }
-}
+} 
