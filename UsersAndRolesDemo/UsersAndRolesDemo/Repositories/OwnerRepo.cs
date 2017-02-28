@@ -72,13 +72,13 @@ namespace UsersAndRolesDemo.Repositories
 
 
         public Boolean EditProperty(PostPropertyVM property, int id)
-        {
+        {/*
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
                        .Where(a => a.Id == property.i).FirstOrDefault();
 
             var userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);*/
             return false;
         }
     }
