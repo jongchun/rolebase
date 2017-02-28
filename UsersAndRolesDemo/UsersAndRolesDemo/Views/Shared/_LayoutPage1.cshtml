@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/site.css" rel="stylesheet" />
     <link href="~/Content/custom.css" rel="stylesheet" />
     <link href="~/Content/img.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-default">
+        <nav class="navbar-inverse navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("STKC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("STSC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,7 +81,42 @@
     <div class="container">
         @RenderBody()
     </div>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+    <footer class="about">
+        <div class="panel panel-default">
+            <div class="panel-footer" style="padding:0">
+                <div class="row" id="homeFooter">
+                    <div class="col-sm-6">
+                        <h3> About Us</h3>
+                        <p class="col-sm-1" />
+                        <p class="col-sm-10">
+                            Affordable rental cabins located throughout Whistler, B.C. Our Service has been praised by our loyal costumers and over the years we have gained more cotumers. Are properties are increasing in Wistler area.
+                            Come find your new cabin today!
+                        </p>
+                        <p class="col-sm-1" />
+                    </div>
+                    <div class="col-sm-6">
+                        <h3> Contact US </h3>
+                        <p> 4010 Whistler Way Whistler, BC V0N 1B4 Canada</p>
+                        <p>Phone (Toll free)1.888.869.2777</p>
+                        <p>Phone (Whistler local)1.604.932.3928</p>
+                        <p> Office HoursMonday - Friday, 8:30 AM – 5:00 PM PST</p>
+                        <!--need to fix these glyphicons
+                        <i class="glyphicon social-twitter"> </i>
+                        <ul class="social">
+                            <li> <a href="https://twitter.com/login"> <i class="glyphicon social-twitter"> </i> </a> </li>
+                            <li> <a href="https://google.ca/login"> <i class="glyphicon social-google-plus"></i> </a> </li>
+                            <li> <a href="https://www.facebook.com/"> <i class="glyphicon social-facebook"></i></a></li>
+                            <li> <a href="https://www.youtube.com/"> <i class="glyphicon social-youtube"> </i> </a> </li>
+                        </ul>-->
+                    </div>
+                </div>
+                <!--/.row-->
+                <!--/.footer-bottom-->
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

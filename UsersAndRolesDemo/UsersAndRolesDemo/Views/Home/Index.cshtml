@@ -4,9 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-
-<h2>Index</h2>
-
+@*<h2>Index</h2>*@
+<div id="titleContainer">
+    <div id="titleDiv">
+        <img id="logoTitle" src="~/Content/Images/STSC.jpg" />
+    </div>
+</div>
 @foreach (var item in Model) {
     <div class="row">
         <div class="col-xs-12 col-sm-4">
