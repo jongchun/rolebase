@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using UsersAndRolesDemo;
 using UsersAndRolesDemo.Models;
+using UsersAndRolesDemo.Repositories;
 
 namespace UsersAndRolesDemo.Controllers
 {
@@ -65,22 +66,27 @@ namespace UsersAndRolesDemo.Controllers
         //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
         public ActionResult Create(PostPropertyVM property)
         {
+            /*
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
- 
+            */
+
+
             //IdentityUser identityUser = manager.Find(login.UserName,
             //                                                 login.Password);
             //string user = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
+                OwnerRepo or = new OwnerRepo();
+                or.Property(property, User.Identity.GetUserName());
                 //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
                 //UserManager<IdentityUser> manager
                 //= new UserManager<IdentityUser>(userStore);
                 //IdentityUser identityUser = manager.Find(login.UserName,
                 //                                                 login.Password);
-
+                /*
                 var test = new Property {
                     UserId = identityUser.Id,
                     summary = property.Summary,
@@ -98,6 +104,7 @@ namespace UsersAndRolesDemo.Controllers
                 };
                 db.Properties.Add(test);
                 db.SaveChanges();
+                */
                 return RedirectToAction("Index");
             }
 

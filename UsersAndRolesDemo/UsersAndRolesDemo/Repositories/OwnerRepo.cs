@@ -13,6 +13,39 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
+        public void Property(PostPropertyVM property, string username)
+        {
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager
+            = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.FindByName(username);
+
+            var test = new Property
+            {
+                UserId = identityUser.Id,
+                summary = property.Summary,
+                propertyType = property.PropertyType,
+                numBedrooms = property.NumBedrooms,
+                numWashrooms = property.NumWashrooms,
+                kitchen = property.Kitchen,
+                baseRate = property.BaseRate,
+                address = property.Address,
+                builtYear = property.BuiltYear,
+                smokingAllowed = property.SmokingAllowed,
+                maxNumberGuests = property.MaxNumberGuests,
+                availableDates = property.AvailableDates,
+                dimensions = property.Dimensions
+            };
+            db.Properties.Add(test);
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
     
