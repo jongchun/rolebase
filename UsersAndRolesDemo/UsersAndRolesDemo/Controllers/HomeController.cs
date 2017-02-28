@@ -123,7 +123,6 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult Info()
         {
             return View();
-
         }
 
         // GET: Home/Create
