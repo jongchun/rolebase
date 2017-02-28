@@ -160,10 +160,11 @@ namespace UsersAndRolesDemo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PostPropertyVM property)
         {
+            /*
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
-
+            
             if (ModelState.IsValid)
             {
                 var test = new Property
@@ -185,8 +186,9 @@ namespace UsersAndRolesDemo.Controllers
                 db.Entry(test).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
+            }*/
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
+            OwnerRepo or = new OwnerRepo();
             return View(property);
         }
 
