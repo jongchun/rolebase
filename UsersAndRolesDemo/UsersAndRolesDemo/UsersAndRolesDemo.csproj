@@ -277,7 +277,7 @@
     <Compile Include="PropertyImage.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\Repo.cs" />
+    <Compile Include="Repositories\AdminRepo.cs" />
     <Compile Include="Reservation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
