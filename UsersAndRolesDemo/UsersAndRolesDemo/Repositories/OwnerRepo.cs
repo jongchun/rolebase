@@ -71,7 +71,7 @@ namespace UsersAndRolesDemo.Repositories
         }
 
 
-        public Boolean EditProperty(PostPropertyVM property, int id)
+        public Boolean EditProperty(PostPropertyVM property, string username)
         {/*
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
@@ -79,7 +79,39 @@ namespace UsersAndRolesDemo.Repositories
 
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);*/
-            return false;
+
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.FindByName(username);
+            
+            var test = new Property
+            {
+                Id = property.Id,
+                UserId = identityUser.Id,
+                propertyType = property.PropertyType,
+                numBedrooms = property.NumBedrooms,
+                numWashrooms = property.NumWashrooms,
+                kitchen = property.Kitchen,
+                baseRate = property.BaseRate,
+                address = property.Address,
+                builtYear = property.BuiltYear,
+                smokingAllowed = property.SmokingAllowed,
+                maxNumberGuests = property.MaxNumberGuests,
+                availableDates = property.AvailableDates,
+                dimensions = property.Dimensions
+            };
+
+            db.Entry(test).State = EntityState.Modified;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+            return true;
         }
     }
 }
