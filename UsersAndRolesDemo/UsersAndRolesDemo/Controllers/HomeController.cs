@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using UsersAndRolesDemo.Models;
+using UsersAndRolesDemo.Services;
 
 namespace UsersAndRolesDemo.Controllers
 {
@@ -116,6 +117,30 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact(Contact contact)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            //RECAPTCHA CODE HERE...
+            CaptchaHelper captchaHelper = new CaptchaHelper();
+            string captchaResponse = captchaHelper.CheckRecaptcha();
+            ViewBag.CaptchaResponse = captchaResponse;
+
+            if (captchaResponse == "Valid")
+            {
+                EmailService es = new EmailService();
+                es.ContactUS(contact);
+                ViewBag.Message = "Email sent successfully.";
+            }
 
             return View();
         }
