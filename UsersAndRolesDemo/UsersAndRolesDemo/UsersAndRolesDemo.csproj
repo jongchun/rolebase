@@ -170,6 +170,8 @@
     <Content Include="Content\Images\no_profile_image.png" />
     <Content Include="Content\img.css" />
     <Content Include="Content\site.css" />
+    <Content Include="Content\theme.css" />
+    <Content Include="Content\theme.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <EntityDeploy Include="Model1.edmx">
