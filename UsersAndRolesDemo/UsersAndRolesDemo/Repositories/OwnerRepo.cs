@@ -13,31 +13,6 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public OwnerProfileVM GetOwner(string name)
-        {
-            AspNetUser user = db.AspNetUsers
-                        .Where(a => a.UserName == name).FirstOrDefault();
-
-            OwnerProfileVM model = new OwnerProfileVM();
-            model.Id = user.Id;
-            model.ProfilePicture = user.profilePicture;
-            model.UserName = user.UserName;
-            model.FirstName = user.firstName;
-            model.LastName = user.lastName;
-            model.Email = user.Email;
-            model.PhoneNumber = user.PhoneNumber;
-            model.CellPhone = user.cellPhone;
-            model.Address = user.address;
-            model.City = user.city;
-            model.Region = user.region;
-            model.PostalCode = user.postalCode;
-            model.DirectDepositRouting = user.directDepositRouting;
-            model.DirectDepositBank = user.directDepositBank;
-            model.DirectDepositAccount = user.directDepositAccount;
-
-            return model;
-        }
-
         public Boolean UpdateOwner(OwnerProfileVM model)
         {
             AspNetUser user = db.AspNetUsers
@@ -53,7 +28,7 @@ namespace UsersAndRolesDemo.Repositories
             }
             if (result == null || result.Succeeded)
             {
-                if (user.profilePicture != null)
+                if (model.ProfilePicture != null)
                 {
                     user.profilePicture = model.ProfilePicture;
                 }
@@ -67,9 +42,9 @@ namespace UsersAndRolesDemo.Repositories
                 user.city = model.City;
                 user.region = model.Region;
                 user.postalCode = model.PostalCode;
-                user.directDepositRouting= model.DirectDepositRouting;
+                user.directDepositRouting = model.DirectDepositRouting;
                 user.directDepositBank = model.DirectDepositBank;
-                user.directDepositAccount = model.DirectDepositBank;
+                user.directDepositAccount = model.DirectDepositAccount;
 
                 db.Entry(user).State = EntityState.Modified;
                 try
@@ -85,3 +60,4 @@ namespace UsersAndRolesDemo.Repositories
         }
     }
 }
+    
