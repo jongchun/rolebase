@@ -80,7 +80,10 @@ namespace UsersAndRolesDemo.Controllers
             if (ModelState.IsValid)
             {
                 OwnerRepo or = new OwnerRepo();
-                or.Property(property, User.Identity.GetUserName());
+                if(!or.Property(property, User.Identity.GetUserName()))
+                {
+                    return View(property);
+                }
                 //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
                 //UserManager<IdentityUser> manager
                 //= new UserManager<IdentityUser>(userStore);

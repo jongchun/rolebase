@@ -13,7 +13,7 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public void Property(PostPropertyVM property, string username)
+        public Boolean Property(PostPropertyVM property, string username)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
@@ -45,6 +45,7 @@ namespace UsersAndRolesDemo.Repositories
             {
                 return false;
             }
+            return true;
         }
     }
 }
