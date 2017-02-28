@@ -28,7 +28,7 @@ namespace UsersAndRolesDemo.Repositories
             model.UserName = user.UserName;
             model.FirstName = user.firstName;
             model.LastName = user.lastName;
-            model.Email = user.Email;
+            model.Email = user.Email; 
             model.PhoneNumber = user.PhoneNumber;
             model.CellPhone = user.cellPhone;
             model.Address = user.address;
