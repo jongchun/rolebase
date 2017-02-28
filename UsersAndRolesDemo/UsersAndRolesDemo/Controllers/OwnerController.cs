@@ -189,6 +189,10 @@ namespace UsersAndRolesDemo.Controllers
             }*/
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
             OwnerRepo or = new OwnerRepo();
+            if(or.EditProperty(property, User.Identity.GetUserName()))
+            {
+                return RedirectToAction("Index");
+            }
             return View(property);
         }
 
