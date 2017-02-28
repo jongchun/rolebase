@@ -3,7 +3,13 @@
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-<h2>@ViewData["Title"].</h2>
-<p>@ViewData["Message"]</p>
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <p class="col-sm-2"/>
+        <p class="col-sm-8">@ViewData["Message"]</p>
+        <p class="col-sm-2" />
+    </div>
+</div>
 
 

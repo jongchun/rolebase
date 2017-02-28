@@ -108,8 +108,8 @@ namespace UsersAndRolesDemo.Controllers
 
         public ActionResult About()
         {
-            ViewData["Message"] = "Affordable rental cabins located throughout Whistler, " + 
-                "B.C. Our Service has been praised by our loyal costumers and over the years we have gained more cotumers. Are properties are increasing in Wistler area. Come find your new cabin today!";
+            ViewData["Message"] = "Luxury rental cabins located throughout the Sea to Sky corridor, " + 
+                "Our Service has been praised by our loyal costumers and new guests. Our properties are increasing in Wistler area. Book your stay with us today!";
 
             return View();
         }
