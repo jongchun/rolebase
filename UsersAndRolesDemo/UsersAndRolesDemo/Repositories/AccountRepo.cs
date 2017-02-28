@@ -13,7 +13,7 @@ using UsersAndRolesDemo.Models;
 
 namespace UsersAndRolesDemo.Repositories
 {
-    public class AdminRepo
+    public class AccountRepo
     {
         private MyDbEntities db = new MyDbEntities();
 
@@ -28,7 +28,7 @@ namespace UsersAndRolesDemo.Repositories
             model.UserName = user.UserName;
             model.FirstName = user.firstName;
             model.LastName = user.lastName;
-            model.Email = user.Email; 
+            model.Email = user.Email;
             model.PhoneNumber = user.PhoneNumber;
             model.CellPhone = user.cellPhone;
             model.Address = user.address;
@@ -47,7 +47,7 @@ namespace UsersAndRolesDemo.Repositories
 
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            
+
             IdentityResult result = null;
             if (model.CurrentPassword != null && model.Password != null && model.ConfirmPassword != null)
             {
@@ -75,7 +75,8 @@ namespace UsersAndRolesDemo.Repositories
                 try
                 {
                     db.SaveChanges();
-                }catch(Exception)
+                }
+                catch (Exception)
                 {
                     return false;
                 }
@@ -153,5 +154,6 @@ namespace UsersAndRolesDemo.Repositories
             }
             return true;
         }
+
     }
 }

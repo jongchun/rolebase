@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using UsersAndRolesDemo.Models;
@@ -10,29 +13,40 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public OwnerProfileVM GetOwner(string name)
+        public Boolean Property(PostPropertyVM property, string username)
         {
-            AspNetUser user = db.AspNetUsers
-                        .Where(a => a.UserName == name).FirstOrDefault();
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager
+            = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.FindByName(username);
 
-            OwnerProfileVM model = new OwnerProfileVM();
-            model.Id = user.Id;
-            model.ProfilePicture = user.profilePicture;
-            model.UserName = user.UserName;
-            model.FirstName = user.firstName;
-            model.LastName = user.lastName;
-            model.Email = user.Email;
-            model.PhoneNumber = user.PhoneNumber;
-            model.CellPhone = user.cellPhone;
-            model.Address = user.address;
-            model.City = user.city;
-            model.Region = user.region;
-            model.PostalCode = user.postalCode;
-            model.DirectDepositRouting = user.directDepositRouting;
-            model.DirectDepositBank = user.directDepositBank;
-            model.DirectDepositAccount = user.directDepositAccount;
-
-            return model;
+            var test = new Property
+            {
+                UserId = identityUser.Id,
+                summary = property.Summary,
+                propertyType = property.PropertyType,
+                numBedrooms = property.NumBedrooms,
+                numWashrooms = property.NumWashrooms,
+                kitchen = property.Kitchen,
+                baseRate = property.BaseRate,
+                address = property.Address,
+                builtYear = property.BuiltYear,
+                smokingAllowed = property.SmokingAllowed,
+                maxNumberGuests = property.MaxNumberGuests,
+                availableDates = property.AvailableDates,
+                dimensions = property.Dimensions
+            };
+            db.Properties.Add(test);
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
+    
