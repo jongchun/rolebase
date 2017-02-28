@@ -28,7 +28,7 @@ namespace UsersAndRolesDemo.Controllers
             
             ViewBag.Username = User.Identity.Name;
             //var properties = db.Properties.Include(p => p.AspNetUser);
-            var id = User.Identity.GetUserId();
+            var id = identityUser.Id;
             var properties = from b in db.Properties
                         where b.UserId == id
                         select b;
