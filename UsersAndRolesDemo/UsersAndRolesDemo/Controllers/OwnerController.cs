@@ -123,7 +123,7 @@ namespace UsersAndRolesDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            */
+            
             Property property = db.Properties.Find(id);
 
             if (property == null)
@@ -132,6 +132,7 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             PostPropertyVM propertyVM = new PostPropertyVM();
+            propertyVM.Id = id;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
@@ -146,7 +147,10 @@ namespace UsersAndRolesDemo.Controllers
             propertyVM.Dimensions = property.dimensions;
 
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
-            return View(propertyVM);
+            */
+            OwnerRepo or = new OwnerRepo();
+            
+            return View(or.GetProperty(id));
         }
 
         // POST: Owner/Edit/5
@@ -164,6 +168,7 @@ namespace UsersAndRolesDemo.Controllers
             {
                 var test = new Property
                 {
+                    Id = property.Id,
                     UserId = identityUser.Id,
                     propertyType = property.PropertyType,
                     numBedrooms = property.NumBedrooms,
@@ -171,7 +176,7 @@ namespace UsersAndRolesDemo.Controllers
                     kitchen = property.Kitchen,
                     baseRate = property.BaseRate,
                     address = property.Address,
-                    builtYear = property.BuiltYear,
+                    builtYear = property.BuiltYear, 
                     smokingAllowed = property.SmokingAllowed,
                     maxNumberGuests = property.MaxNumberGuests,
                     availableDates = property.AvailableDates,

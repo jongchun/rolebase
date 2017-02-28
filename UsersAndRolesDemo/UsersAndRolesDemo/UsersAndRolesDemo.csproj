@@ -337,6 +337,7 @@
     <Content Include="Views\Account\AdminProfile.cshtml" />
     <Content Include="Views\Account\OwnerProfile.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

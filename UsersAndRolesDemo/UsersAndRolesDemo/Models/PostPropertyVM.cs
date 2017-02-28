@@ -8,7 +8,8 @@ namespace UsersAndRolesDemo.Models
 {
     public class PostPropertyVM
     {
-  
+        public int Id { get; set; }
+        
         [Required]
         [Display(Name = "Summary")]
         [DataType(DataType.MultilineText)]
