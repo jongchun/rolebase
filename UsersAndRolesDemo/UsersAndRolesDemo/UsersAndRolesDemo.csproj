@@ -322,6 +322,7 @@
     <Content Include="Views\Admin\GetUsers.cshtml" />
     <Content Include="Views\Account\AdminProfile.cshtml" />
     <Content Include="Views\Account\OwnerProfile.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

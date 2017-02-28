@@ -120,6 +120,12 @@ namespace UsersAndRolesDemo.Controllers
             return View();
         }
 
+        public ActionResult Info()
+        {
+            return View();
+
+        }
+
         // GET: Home/Create
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
