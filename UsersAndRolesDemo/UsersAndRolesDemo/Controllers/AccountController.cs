@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
@@ -332,7 +333,6 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Owner")]
         public ActionResult OwnerProfile()
         {
             var n = User.Identity.Name;
@@ -342,7 +342,6 @@ namespace UsersAndRolesDemo.Controllers
             return View(user);
         }
         [HttpPost]
-        [Authorize(Roles = "Owner")]
         public ActionResult OwnerProfile([Bind(Exclude = "ProfilePicture")]OwnerProfileVM model)
         {
             if (!ModelState.IsValid)
@@ -397,6 +396,33 @@ namespace UsersAndRolesDemo.Controllers
                 imageData = br.ReadBytes((int)imageFileLength);
                 return File(imageData, "image/png");
             }
+        }
+
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult DeleteUser(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AspNetUser aspNetUser = db.AspNetUsers.Find(id);
+            if (aspNetUser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(aspNetUser);
+        }
+
+        [HttpPost, ActionName("DeleteUser")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult DeleteUserConfirmed(string id)
+        {
+            AspNetUser aspNetUser = db.AspNetUsers.Find(id);
+            db.AspNetUsers.Remove(aspNetUser);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

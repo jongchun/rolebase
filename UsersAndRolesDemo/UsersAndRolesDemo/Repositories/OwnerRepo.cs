@@ -88,6 +88,7 @@ namespace UsersAndRolesDemo.Repositories
             {
                 Id = property.Id,
                 UserId = identityUser.Id,
+                summary = property.Summary,
                 propertyType = property.PropertyType,
                 numBedrooms = property.NumBedrooms,
                 numWashrooms = property.NumWashrooms,
