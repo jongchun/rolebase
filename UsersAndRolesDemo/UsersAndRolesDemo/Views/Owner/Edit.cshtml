@@ -94,8 +94,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SmokingAllowed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SmokingAllowed, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.RadioButtonFor(model => model.SmokingAllowed, "Yes", new { id = "", htmlAttributes = new { @class = "form-control" } })Yes
+                @Html.RadioButtonFor(model => model.SmokingAllowed, "No", new { id = "", htmlAttributes = new { @class = "form-control" } })No
                 @Html.ValidationMessageFor(model => model.SmokingAllowed, "", new { @class = "text-danger" })
+
             </div>
         </div>
 
