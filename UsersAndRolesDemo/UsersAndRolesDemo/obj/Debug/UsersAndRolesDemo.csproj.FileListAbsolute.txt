@@ -337,7 +337,6 @@ D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.W
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
-D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
 D:\Work\1\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
@@ -687,3 +686,4 @@ C:\Users\A00977583\Source\Repos\rolebase3\UsersAndRolesDemo\UsersAndRolesDemo\ob
 C:\Users\A00977583\Source\Repos\rolebase3\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
 C:\Users\A01008030\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\Recaptcha.dll
 C:\Users\A01008030\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\Recaptcha.pdb
+D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache

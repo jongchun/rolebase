@@ -56,11 +56,12 @@
         </td>
         <td>
             
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id })
         @{
 
             if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
+                @Html.Raw(" | ");
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id })@Html.Raw(" | ");
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             }

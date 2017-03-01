@@ -18,9 +18,17 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.TextAreaFor(model => model.Summary, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -84,13 +92,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SmokingAllowed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="radiobutton">
-                    @Html.RadioButton("Yes", 'y')
-                    @Html.RadioButton("No", 'n')
-                    @*@Html.RadioButton(model => model.SmokingAllowed, 'no', new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SmokingAllowed, "", new { @class = "text-danger" })*@
-                    </div>
-                </div>
+                
+                    @Html.RadioButtonFor(model => model.SmokingAllowed, "Yes", new { id="", htmlAttributes = new { @class = "form-control" } })Yes
+                    @Html.RadioButtonFor(model => model.SmokingAllowed, "No", new { id = "", htmlAttributes = new { @class = "form-control" } })No
+                    @Html.ValidationMessageFor(model => model.SmokingAllowed, "", new { @class = "text-danger" })
+                
+            </div>
         </div>
 
         <div class="form-group">
@@ -101,13 +108,13 @@
             </div>
         </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.AvailableDates, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.AvailableDates, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.AvailableDates, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -128,7 +135,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

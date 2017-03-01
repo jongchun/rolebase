@@ -8,11 +8,14 @@ namespace UsersAndRolesDemo.Models
 {
     public class PostPropertyVM
     {
-        public int Id { get; set; }
-        
+        public int? Id { get; set; }
+
+        [Required]
+        [Display(Name = "Title")]
+        public string Title { get; set; }
+
         [Required]
         [Display(Name = "Summary")]
-        [DataType(DataType.MultilineText)]
         public string Summary { get; set; }
 
         [Required]
@@ -20,17 +23,17 @@ namespace UsersAndRolesDemo.Models
         public string PropertyType { get; set; }
 
         [Required]
-        [Range(1, 10)]
+        [Range(1, 10,ErrorMessage ="Invalid. Between 1~10 please")]
         [Display(Name = "Number of Bedrooms")]
         public int NumBedrooms { get; set; }    
 
         [Required]
-        [Range(1, 10)]
+        [Range(1, 10, ErrorMessage = "Invalid. Between 1~10 please")]
         [Display(Name = "Number of Washrooms")]
         public int NumWashrooms { get; set; }
 
         [Required]
-        [Range(1, 10)]
+        [Range(1, 10, ErrorMessage = "Invalid. Between 1~10 please")]
         [Display(Name = "Number of Kitchens")]
         public int Kitchen { get; set; }
 
@@ -51,12 +54,12 @@ namespace UsersAndRolesDemo.Models
         public string SmokingAllowed { get; set; }
 
         [Required]
-        [Display(Name = "max Number of Guests")]
+        [Display(Name = "Max Guests")]
         public string MaxNumberGuests { get; set; }
 
-        [Required]
+        
         [Display(Name = "Available Dates")]
-        public DateTime AvailableDates { get; set; }
+        public DateTime? AvailableDates { get; set; }
 
         [Required]
         [Display(Name = "Dimensions")]

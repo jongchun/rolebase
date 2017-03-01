@@ -83,8 +83,9 @@ namespace UsersAndRolesDemo.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-                db.Properties.Add(property);
+                
             }
+            db.Properties.Add(property);
             try
             {
                 db.SaveChanges();

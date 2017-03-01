@@ -23,6 +23,7 @@ GO
 CREATE TABLE Property(
 	Id int IDENTITY(1,1) PRIMARY KEY,
 	UserId nvarchar(128) NOT NULL,
+	title varchar(50),
 	summary varchar(MAX),
 	propertyType varchar(15),
 	numBedrooms int,
@@ -31,7 +32,7 @@ CREATE TABLE Property(
 	baseRate money,
 	address varchar(256),
 	builtYear varchar(4),
-	smokingAllowed char,
+	smokingAllowed varchar(3),
 	maxNumberGuests varchar(2),
 	availableDates date,
 	dimensions varchar(128),

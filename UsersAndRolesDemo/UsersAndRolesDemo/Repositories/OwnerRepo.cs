@@ -13,16 +13,17 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public Boolean Property(PostPropertyVM property, string username)
+        public Boolean PostProperty(PostPropertyVM property, string username)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(username);
 
-            var test = new Property
+            var unit = new Property()
             {
                 UserId = identityUser.Id,
+                title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
                 numBedrooms = property.NumBedrooms,
@@ -36,7 +37,7 @@ namespace UsersAndRolesDemo.Repositories
                 availableDates = property.AvailableDates,
                 dimensions = property.Dimensions
             };
-            db.Properties.Add(test);
+            db.Properties.Add(unit);
             try
             {
                 db.SaveChanges();
@@ -54,6 +55,7 @@ namespace UsersAndRolesDemo.Repositories
 
             PostPropertyVM propertyVM = new PostPropertyVM();
             propertyVM.Id = id;
+            propertyVM.Title = property.title;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
             propertyVM.NumBedrooms = (int)property.numBedrooms;
@@ -64,7 +66,7 @@ namespace UsersAndRolesDemo.Repositories
             propertyVM.BuiltYear = property.builtYear;
             propertyVM.SmokingAllowed = property.smokingAllowed;
             propertyVM.MaxNumberGuests = property.maxNumberGuests;
-            propertyVM.AvailableDates = (DateTime)property.availableDates;
+            propertyVM.AvailableDates = property.availableDates;
             propertyVM.Dimensions = property.dimensions;
 
             return propertyVM;
@@ -86,8 +88,9 @@ namespace UsersAndRolesDemo.Repositories
             
             var test = new Property
             {
-                Id = property.Id,
+                Id = (int)property.Id,
                 UserId = identityUser.Id,
+                title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
                 numBedrooms = property.NumBedrooms,

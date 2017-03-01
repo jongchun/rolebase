@@ -64,7 +64,7 @@ namespace UsersAndRolesDemo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
-        public ActionResult Create(PostPropertyVM property)
+        public ActionResult Create([Bind(Exclude ="Id")]PostPropertyVM property)
         {
             /*
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
@@ -80,7 +80,7 @@ namespace UsersAndRolesDemo.Controllers
             if (ModelState.IsValid)
             {
                 OwnerRepo or = new OwnerRepo();
-                if(!or.Property(property, User.Identity.GetUserName()))
+                if(!or.PostProperty(property, User.Identity.GetUserName()))
                 {
                     return View(property);
                 }

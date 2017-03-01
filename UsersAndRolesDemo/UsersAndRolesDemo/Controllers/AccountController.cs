@@ -46,7 +46,6 @@ namespace UsersAndRolesDemo.Controllers
                 CaptchaHelper captchaHelper = new CaptchaHelper();
                 string captchaResponse = captchaHelper.CheckRecaptcha();
                 ViewBag.CaptchaResponse = captchaResponse;
-
                 if (ValidLogin(login) && captchaResponse == "Valid")
                 {
                     IAuthenticationManager authenticationManager
