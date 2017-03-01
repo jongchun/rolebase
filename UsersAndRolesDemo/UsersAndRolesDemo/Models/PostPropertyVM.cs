@@ -20,14 +20,17 @@ namespace UsersAndRolesDemo.Models
         public string PropertyType { get; set; }
 
         [Required]
+        [Range(1, 10)]
         [Display(Name = "Number of Bedrooms")]
         public int NumBedrooms { get; set; }    
 
         [Required]
+        [Range(1, 10)]
         [Display(Name = "Number of Washrooms")]
         public int NumWashrooms { get; set; }
 
         [Required]
+        [Range(1, 10)]
         [Display(Name = "Number of Kitchens")]
         public int Kitchen { get; set; }
 
