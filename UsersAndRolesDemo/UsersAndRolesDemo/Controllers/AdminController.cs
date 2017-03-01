@@ -68,7 +68,8 @@ namespace UsersAndRolesDemo.Controllers
         // GET: All Users
         public ActionResult GetUsers()
         {
-            return View(db.AspNetUsers.ToList());
+            
+            return View(db.AspNetUsers.Where(a => !a.AspNetRoles.Any(r => r.Name == "Admin")).ToList());
         }
 
         public ActionResult UserDetails(string id)
@@ -137,32 +138,6 @@ namespace UsersAndRolesDemo.Controllers
                 return RedirectToAction("Index");
             }
             return View(aspNetUser);
-        }
-
-        // GET: AspNetUsers/Delete/5
-        public ActionResult DeleteUser(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AspNetUser aspNetUser = db.AspNetUsers.Find(id);
-            if (aspNetUser == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aspNetUser);
-        }
-
-        // POST: AspNetUsers/Delete/5
-        [HttpPost, ActionName("DeleteUser")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteUserConfirmed(string id)
-        {
-            AspNetUser aspNetUser = db.AspNetUsers.Find(id);
-            db.AspNetUsers.Remove(aspNetUser);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

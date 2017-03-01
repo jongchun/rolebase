@@ -28,7 +28,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        @Html.ActionLink("STSC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @*@Html.ActionImage("Index", "~/Content/Images/Image.bmp", "Edit")
+    @Html.ActionLink("StSC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("StSC", "Index", "Home", new { @class = "imgLink" })*@
+                        <a class ="navbar-brand" href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Content/Images/STSC.ico")" alt="Home"/></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,7 +42,7 @@
                                 @Html.Raw("<li>");@Html.ActionLink("Properties", "Properties", "Home");@Html.Raw("</li>");
                                 if (!Request.IsAuthenticated)
                                 {
-                                    @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
+                                    @*@Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");*@
                                     @Html.Raw("<li>");@Html.ActionLink("Register", "Register", "Account");@Html.Raw("</li>");
                                     @Html.Raw("<li>");@Html.ActionLink("About", "About", "Home");@Html.Raw("</li>");
                                     @Html.Raw("<li>");@Html.ActionLink("Contact", "Contact", "Home");@Html.Raw("</li>");
@@ -57,6 +60,14 @@
                                     @Html.Raw("<li>");@Html.ActionLink("Create Roles", "AddRole", "Admin");@Html.Raw("</li>");
                                     @Html.Raw("<li>");@Html.ActionLink("Assign Roles", "AddUserToRole", "Admin");@Html.Raw("</li>");
                                 }
+                            }
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            @{
+                                if (!Request.IsAuthenticated)
+                                {
+                                    @Html.Raw("<li>");@Html.ActionLink("Login", "Login", "Account");@Html.Raw("</li>");
+                                }
                                 if (Request.IsAuthenticated)
                                 {
                                     if (User.IsInRole("Admin"))
@@ -69,10 +80,8 @@
                                     }
                                     @Html.Raw("<li>");@Html.ActionLink("Logout", "Logout", "Account");@Html.Raw("</li>");
                                 }
-
                             }
                         </ul>
-                        <ul class="nav navbar-nav navbar-right"></ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
