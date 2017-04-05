@@ -75,6 +75,9 @@ namespace UsersAndRolesDemo.Controllers
                     else
                     {
                         //return RedirectToAction("SecureArea", "Home");
+                        /*
+                         * NEED TO INSPECT THIS AREA FOR INVALID LOGINS
+                         */
                     }
                 }
             }
