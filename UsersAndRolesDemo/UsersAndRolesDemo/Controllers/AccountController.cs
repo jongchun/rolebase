@@ -40,6 +40,12 @@ namespace UsersAndRolesDemo.Controllers
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.Find(login.UserName, login.Password);
 
+            // INVALID LOGIN
+            if (identityUser == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid user name or password.");
+            }
+
             if (ModelState.IsValid)
             {
                 if (ValidLogin(login))
