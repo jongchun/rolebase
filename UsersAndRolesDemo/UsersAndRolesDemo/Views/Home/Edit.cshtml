@@ -5,12 +5,16 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Edit</h2>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h2>Edit</h2>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
 
         <hr />
