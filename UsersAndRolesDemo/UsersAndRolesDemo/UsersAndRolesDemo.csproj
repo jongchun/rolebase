@@ -207,6 +207,8 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\PDF\ERD_STSC.pdf" />
+    <Content Include="Content\PDF\UC_STSC.pdf" />
     <None Include="Properties\PublishProfiles\jcssd.me - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\jcssd.me - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
