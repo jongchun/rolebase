@@ -61,6 +61,7 @@ namespace UsersAndRolesDemo.Controllers
                         IsPersistent = false
                     }, identity);
                     var role = identityUser.Roles.ElementAt(0).RoleId;
+                    System.Threading.Thread.Sleep(1000);
                     if (role == "Owner")
                     {
                         //System.Threading.Thread.Sleep(2000);
