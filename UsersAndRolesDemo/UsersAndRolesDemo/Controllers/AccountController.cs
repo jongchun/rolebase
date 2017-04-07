@@ -110,7 +110,7 @@ namespace UsersAndRolesDemo.Controllers
             //RECAPTCHA CODE HERE...
             CaptchaHelper captchaHelper = new CaptchaHelper();
             string captchaResponse = captchaHelper.CheckRecaptcha();
-            ViewBag.CaptchaResponse = captchaResponse;
+            //ViewBag.CaptchaResponse = captchaResponse;
 
             if (captchaResponse == "Valid")
             {
@@ -145,6 +145,10 @@ namespace UsersAndRolesDemo.Controllers
                     es.SendEmail(newUser.Email, "Confirm Registration", email);
                     ViewBag.Confirmation = "We sent the confirm registration email. Please check the email first.";
 
+                }else
+                {
+                    ViewBag.CaptchaResponse = "Someone already has this email address or username.";
+                    return View();
                 }
             }
             return View();
@@ -338,13 +342,20 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         [HttpGet]
-        public ActionResult OwnerProfile()
+        public ActionResult OwnerProfile(string id)
         {
-            var n = User.Identity.Name;
-            AccountRepo rp = new AccountRepo();
-            OwnerProfileVM user = rp.GetOwner(n);
+            //var n = User.Identity.Name;
+            if (id != "")
+            {
+                AccountRepo rp = new AccountRepo();
+                OwnerProfileVM user = rp.GetOwner(id);
 
-            return View(user);
+                return View(user);
+            }else
+            {
+                var n = User.Identity.Name;
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult OwnerProfile([Bind(Exclude = "ProfilePicture")]OwnerProfileVM model)
@@ -380,10 +391,10 @@ namespace UsersAndRolesDemo.Controllers
             return View();
         }
 
-        public FileContentResult UserPhotos()
+        [HttpGet]
+        public FileContentResult UserPhotos(string id)
         {
-            string userName = User.Identity.GetUserName();
-            AspNetUser user = db.AspNetUsers.Where(a => a.UserName == userName).FirstOrDefault();
+            AspNetUser user = db.AspNetUsers.Where(a => a.Id == id).FirstOrDefault();
 
             if (user.profilePicture != null)
             {

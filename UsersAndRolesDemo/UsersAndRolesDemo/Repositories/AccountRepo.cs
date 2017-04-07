@@ -84,10 +84,10 @@ namespace UsersAndRolesDemo.Repositories
             return true;
         }
 
-        public OwnerProfileVM GetOwner(string name)
+        public OwnerProfileVM GetOwner(string id)
         {
             AspNetUser user = db.AspNetUsers
-                        .Where(a => a.UserName == name).FirstOrDefault();
+                        .Where(a => a.Id == id).FirstOrDefault();
 
             OwnerProfileVM model = new OwnerProfileVM();
             model.Id = user.Id;
