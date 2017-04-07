@@ -19,13 +19,17 @@ namespace UsersAndRolesDemo.Controllers
         // GET: api/_OwnerPropertyContoller
         public IQueryable<Property> GetProperties()
         {
-            return db.Properties;
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
+            return context.Properties;
         }
 
         // GET: api/_OwnerPropertyContoller/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult GetProperty(int id)
         {
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
             Property property = db.Properties.Find(id);
             if (property == null)
             {
@@ -33,8 +37,10 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             return Ok(property);
+
         }
 
+        //no adjustment made bellow 
         // PUT: api/_OwnerPropertyContoller/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProperty(int id, Property property)
