@@ -1,4 +1,4 @@
-﻿var serviceUrl = './api/Properties';
+﻿var serviceUrl = './api/_OwnerPropertyContoller';
 
 function sendRequest() {
     $("#properties").replaceWith("<span id='value1'></span>");
@@ -27,13 +27,14 @@ function updateList() {
 }
 function find() {
     var id = $('#propertyIdFind').val();
-    $.getJSON(serviceUrl + "/" + id,
+    $.getJSON(serviceUrl,
         function (data) {
             if (data == null) {
                 $('#propertyFind').text('Property not found.');
             }
-            var str = data.summary + ': ' + data.propertyType + ", " + data.UserId + ", " + data.numBedrooms + ", " + data.numWashrooms + ", " + data.kitchen + ", " + data.baseRate + ", " + data.builtYear + ", " + data.smokingAllowed + ", " + data.maxNumberGuests + ", " + data.availableDates + ", " + data.dimensions + '%';
-            $('#propertyFind').text(str);
+            //var str = data.summary + ': ' + data.propertyType + ", " + data.UserId + ", " + data.numBedrooms + ", " + data.numWashrooms + ", " + data.kitchen + ", " + data.baseRate + ", " + data.builtYear + ", " + data.smokingAllowed + ", " + data.maxNumberGuests + ", " + data.availableDates + ", " + data.dimensions + '%';
+            $('#propertytitle').text("<a href='/Home/Details/" + data.Id + "'" + data.title + "</a>");
+            $('#propertysummary').text(data.summary);
         })
     .fail(
         function (jqueryHeaderRequest, textStatus, err) {
