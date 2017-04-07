@@ -33,8 +33,18 @@ function find() {
                 $('#propertyFind').text('Property not found.');
             }
             //var str = data.summary + ': ' + data.propertyType + ", " + data.UserId + ", " + data.numBedrooms + ", " + data.numWashrooms + ", " + data.kitchen + ", " + data.baseRate + ", " + data.builtYear + ", " + data.smokingAllowed + ", " + data.maxNumberGuests + ", " + data.availableDates + ", " + data.dimensions + '%';
-            $('#propertytitle').text("<a href='/Home/Details/" + data.Id + "'" + data.title + "</a>");
-            $('#propertysummary').text(data.summary);
+            $('#propertyTitle').text("<a href='/Home/Details/" + data.Id + "'" + data.title + "</a>");
+            $('#propertySummary').text(data.summary);
+            $('#propertyPropertyType').text(data.propertyType);
+            $('#propertyNumBedrooms').text(data.numBedrooms);
+            $('#propertyNumWashrooms').text(data.numWashrooms);
+            $('#propertyKitchens').text(data.kitchen);
+            $('#propertyBaseRate').text(data.baseRate);
+            $('#propertyBuiltYear').text(data.builtYear);
+            $('#propertySmokingAllowed').text(data.smokingAllowed);
+            $('#propertyMaxNumberGuests').text(data.maxNumberGuests);
+            $('#propertyAvailableDates').text(data.availableDates);
+            $('#propertyDimensions').text(data.dimensions);
         })
     .fail(
         function (jqueryHeaderRequest, textStatus, err) {
