@@ -14,7 +14,9 @@
     <div class="row">
         <div class="col-xs-12 col-sm-4">
             <div class="clearfix">
-                <img src="@Url.Content("~/Content/Images/cabin.jpg")" alt="cabin" class="pull-left img-responsive">
+                <a href="@Url.Action("Details", new { id = item.Id })">
+                    <img src="@Url.Content("~/Content/Images/cabin.jpg")" alt="cabin" class="pull-left img-responsive">
+                </a>
                 <table class="table">
                     <tr>
                         <th colspan="2">Alpine Meadows Cabin Lot</th>
@@ -37,7 +39,7 @@
     </div>
 
             //@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id })
+            //@Html.ActionLink("Details", "Details", new { id = item.Id })
             //@Html.ActionLink("Delete", "Delete", new { id=item.Id })
 
 }

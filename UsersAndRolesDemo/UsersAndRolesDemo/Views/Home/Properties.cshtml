@@ -19,6 +19,42 @@
             }
 
         }
+<div class="row">
+@foreach (var item in Model)
+{
+    <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+            <a href="@Url.Action("Details", new { id = item.Id })">
+                <img src="@Url.Content("~/Content/Images/cabin.jpg")" alt="cabin">
+            </a>
+            <div class="caption">
+                <h3>@Html.DisplayFor(modelItem => item.title)</h3>
+                <div class="row">
+                    <div class="col-md-4">Dimensions</div>
+                    <div class="col-md-8">@Html.DisplayFor(modelItem => item.dimensions)</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        Rooms
+                    </div>
+                    <div class="col-md-8">
+                        @Html.DisplayFor(modelItem => item.numBedrooms) Bedrooms<br />@Html.DisplayFor(modelItem => item.numWashrooms) Bethrooms<br />Max Occupancy @Html.DisplayFor(modelItem => item.maxNumberGuests)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        Price
+                    </div>
+                    <div class="col-md-8">
+                        $@Html.DisplayFor(modelItem => item.baseRate)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</div>
+<!--
         <table class="table">
 
 
@@ -78,3 +114,4 @@
                             }
 
         </table>
+    -->
