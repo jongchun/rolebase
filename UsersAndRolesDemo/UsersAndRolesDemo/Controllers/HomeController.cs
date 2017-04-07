@@ -207,5 +207,27 @@ namespace UsersAndRolesDemo.Controllers
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
             return View(property);
         }
+
+        public ActionResult PayPal()
+        {
+            PayPal_IPN paypalResponse = new PayPal_IPN("test");
+
+            if (paypalResponse.TXN_ID != null)
+            {
+                //paypalpatEntities context = new paypalpatEntities();
+                //WE NEED TO FIGURE OUT HOW TO PLUG PAY PAL TO OUR DB
+                IPN ipn = new IPN();
+                ipn.transactionID = paypalResponse.TXN_ID;
+                decimal amount = Convert.ToDecimal(paypalResponse.PaymentGross);
+                ipn.amount = amount;
+                ipn.buyerEmail = paypalResponse.PayerEmail;
+                ipn.txTime = DateTime.Now;
+                ipn.custom = paypalResponse.Custom;
+                ipn.paymentStatus = paypalResponse.PaymentStatus;
+                //context.IPNs.Add(ipn);
+                //context.SaveChanges();
+            }
+            return View();
+        }
     }
 }
