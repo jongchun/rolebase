@@ -198,6 +198,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Model1.edmx">
@@ -272,8 +273,10 @@
     <Compile Include="Models\ChangePasswordVM.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ForgotPasswordVM.cs" />
+    <Compile Include="Models\IPN.cs" />
     <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\OwnerProfileVM.cs" />
+    <Compile Include="Models\PayPal_IPN.cs" />
     <Compile Include="Models\PostPropertyVM.cs" />
     <Compile Include="Models\RegisteredUserVM.cs" />
     <Compile Include="Models\ResetPasswordVM.cs" />
