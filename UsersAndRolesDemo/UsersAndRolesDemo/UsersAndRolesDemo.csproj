@@ -274,6 +274,7 @@
     <Compile Include="Models\ForgotPasswordVM.cs" />
     <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\OwnerProfileVM.cs" />
+    <Compile Include="Models\PayPal_IPN.cs" />
     <Compile Include="Models\PostPropertyVM.cs" />
     <Compile Include="Models\RegisteredUserVM.cs" />
     <Compile Include="Models\ResetPasswordVM.cs" />
