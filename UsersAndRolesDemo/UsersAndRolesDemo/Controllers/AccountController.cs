@@ -318,10 +318,9 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             byte[] profileImage = null;
-            if(Request.Files.Count > 0)
+            HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
+            if (poImgFile.ContentLength > 0)
             {
-                HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
-
                 using (var binary = new BinaryReader(poImgFile.InputStream))
                 {
                     profileImage = binary.ReadBytes(poImgFile.ContentLength);
@@ -337,25 +336,21 @@ namespace UsersAndRolesDemo.Controllers
                 ViewBag.Message = "Updated failed.";
             }
 
-            //return RedirectToAction("Index");
-            return View();
+            var n = User.Identity.Name;
+            AdminProfileVM user = rp.GetAdmin(n);
+
+            return View(user);
         }
 
         [HttpGet]
         public ActionResult OwnerProfile(string id)
         {
-            //var n = User.Identity.Name;
-            if (id != "")
-            {
-                AccountRepo rp = new AccountRepo();
-                OwnerProfileVM user = rp.GetOwner(id);
+            var n = User.Identity.Name;
 
-                return View(user);
-            }else
-            {
-                var n = User.Identity.Name;
-                return View();
-            }
+            AccountRepo rp = new AccountRepo();
+            OwnerProfileVM user = rp.GetOwner(id, n);
+
+            return View(user);
         }
         [HttpPost]
         public ActionResult OwnerProfile([Bind(Exclude = "ProfilePicture")]OwnerProfileVM model)
@@ -366,10 +361,9 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             byte[] profileImage = null;
-            if (Request.Files.Count > 0)
+            HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
+            if (poImgFile.ContentLength > 0)
             {
-                HttpPostedFileBase poImgFile = Request.Files["ProfilePicture"];
-
                 using (var binary = new BinaryReader(poImgFile.InputStream))
                 {
                     profileImage = binary.ReadBytes(poImgFile.ContentLength);
@@ -387,8 +381,9 @@ namespace UsersAndRolesDemo.Controllers
                 ViewBag.Message = "Updated failed.";
             }
 
-            //return RedirectToAction("Index");
-            return View();
+            OwnerProfileVM user = rp.GetOwner(model.Id, null);
+            //return RedirectToAction("OwnerProfile", "Account");
+            return View(user);
         }
 
         [HttpGet]
