@@ -82,7 +82,7 @@ namespace UsersAndRolesDemo.Controllers
                     {
                         //return RedirectToAction("SecureArea", "Home");
                         /*
-                         * NEED TO INSPECT THIS AREA FOR INVALID LOGINS
+                         * NEED TO INSPECT THIS AREA FOR INVALID LOGINS - done
                          */
                     }
                 }
@@ -143,11 +143,12 @@ namespace UsersAndRolesDemo.Controllers
 
                     EmailService es = new EmailService();
                     es.SendEmail(newUser.Email, "Confirm Registration", email);
-                    ViewBag.Confirmation = "We sent the confirm registration email. Please check the email first.";
+                    ViewBag.Confirmation = "Please check your mailbox for the confirmation email and confirm your account.";
 
                 }else
                 {
-                    ViewBag.CaptchaResponse = "Someone already has this email address or username.";
+                    // NEED TO REPLACE THE # WITH AN ACTUAL LINK TO THE FORGOT PASSWORD PAGE 
+                    ViewBag.CaptchaResponse = "Username and/or email already in use, <a href='#'>Have you forgotten your password?</a>";
                     return View();
                 }
             }
