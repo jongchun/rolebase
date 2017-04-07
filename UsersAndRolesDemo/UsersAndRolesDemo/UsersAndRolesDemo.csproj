@@ -272,6 +272,7 @@
     <Compile Include="Models\ChangePasswordVM.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ForgotPasswordVM.cs" />
+    <Compile Include="Models\IPN.cs" />
     <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\OwnerProfileVM.cs" />
     <Compile Include="Models\PayPal_IPN.cs" />
