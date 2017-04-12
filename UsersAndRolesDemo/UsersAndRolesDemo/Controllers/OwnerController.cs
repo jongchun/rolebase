@@ -79,6 +79,12 @@ namespace UsersAndRolesDemo.Controllers
             //string user = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
+                foreach (string fileName in Request.Files)
+                {
+                    HttpPostedFileBase file = Request.Files[fileName];
+                    string imagename = Guid.NewGuid() + "_" + file.FileName;
+
+                }
                 OwnerRepo or = new OwnerRepo();
                 if(!or.PostProperty(property, User.Identity.GetUserName()))
                 {
