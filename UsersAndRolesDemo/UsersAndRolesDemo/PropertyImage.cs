@@ -16,7 +16,11 @@ namespace UsersAndRolesDemo
     {
         public int Id { get; set; }
         public int PropertyId { get; set; }
-        public byte[] name { get; set; }
+        public string main { get; set; }
+        public string bedroom { get; set; }
+        public string livingroom { get; set; }
+        public string bathroom { get; set; }
+        public string kitchen { get; set; }
     
         public virtual Property Property { get; set; }
     }

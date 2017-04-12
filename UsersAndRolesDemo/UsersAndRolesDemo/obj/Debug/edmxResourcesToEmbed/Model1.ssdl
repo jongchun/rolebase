@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="MyDb.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -102,7 +102,11 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PropertyId" Type="int" Nullable="false" />
-    <Property Name="name" Type="varbinary(max)" />
+    <Property Name="main" Type="nvarchar(max)" />
+    <Property Name="bedroom" Type="nvarchar(max)" />
+    <Property Name="livingroom" Type="nvarchar(max)" />
+    <Property Name="bathroom" Type="nvarchar(max)" />
+    <Property Name="kitchen" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -129,7 +133,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PropertyI__Prope__35BCFE0A">
+  <Association Name="FK__PropertyI__Prope__49C3F6B7">
     <End Role="Property" Type="Self.Property" Multiplicity="1" />
     <End Role="PropertyImage" Type="Self.PropertyImage" Multiplicity="*" />
     <ReferentialConstraint>
@@ -221,7 +225,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MyDbModelStoreContainer">
+  <EntityContainer Name="MyDbStoreContainer">
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -235,7 +239,7 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Property" EntitySet="Property" />
     </AssociationSet>
-    <AssociationSet Name="FK__PropertyI__Prope__35BCFE0A" Association="Self.FK__PropertyI__Prope__35BCFE0A">
+    <AssociationSet Name="FK__PropertyI__Prope__49C3F6B7" Association="Self.FK__PropertyI__Prope__49C3F6B7">
       <End Role="Property" EntitySet="Property" />
       <End Role="PropertyImage" EntitySet="PropertyImage" />
     </AssociationSet>

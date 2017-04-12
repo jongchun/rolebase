@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MyDb.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -107,7 +107,11 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PropertyId" Type="int" Nullable="false" />
-          <Property Name="name" Type="varbinary(max)" />
+          <Property Name="main" Type="nvarchar(max)" />
+          <Property Name="bedroom" Type="nvarchar(max)" />
+          <Property Name="livingroom" Type="nvarchar(max)" />
+          <Property Name="bathroom" Type="nvarchar(max)" />
+          <Property Name="kitchen" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -134,7 +138,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PropertyI__Prope__35BCFE0A">
+        <Association Name="FK__PropertyI__Prope__49C3F6B7">
           <End Role="Property" Type="Self.Property" Multiplicity="1" />
           <End Role="PropertyImage" Type="Self.PropertyImage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -226,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MyDbModelStoreContainer">
+        <EntityContainer Name="MyDbStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -240,7 +244,7 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Property" EntitySet="Property" />
           </AssociationSet>
-          <AssociationSet Name="FK__PropertyI__Prope__35BCFE0A" Association="Self.FK__PropertyI__Prope__35BCFE0A">
+          <AssociationSet Name="FK__PropertyI__Prope__49C3F6B7" Association="Self.FK__PropertyI__Prope__49C3F6B7">
             <End Role="Property" EntitySet="Property" />
             <End Role="PropertyImage" EntitySet="PropertyImage" />
           </AssociationSet>
@@ -273,7 +277,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MyDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -370,7 +374,7 @@
           <Property Name="availableDates" Type="DateTime" Precision="0" />
           <Property Name="dimensions" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AspNetUser" Relationship="Self.FK__Property__UserId__32E0915F" FromRole="Property" ToRole="AspNetUsers" />
-          <NavigationProperty Name="PropertyImages" Relationship="Self.FK__PropertyI__Prope__35BCFE0A" FromRole="Property" ToRole="PropertyImage" />
+          <NavigationProperty Name="PropertyImages" Relationship="Self.FK__PropertyI__Prope__49C3F6B7" FromRole="Property" ToRole="PropertyImage" />
           <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__Prope__398D8EEE" FromRole="Property" ToRole="Reservation" />
         </EntityType>
         <EntityType Name="PropertyImage">
@@ -379,8 +383,12 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PropertyId" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Property" Relationship="Self.FK__PropertyI__Prope__35BCFE0A" FromRole="PropertyImage" ToRole="Property" />
+          <Property Name="main" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bedroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="livingroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bathroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="kitchen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Property" Relationship="Self.FK__PropertyI__Prope__49C3F6B7" FromRole="PropertyImage" ToRole="Property" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -449,7 +457,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PropertyI__Prope__35BCFE0A">
+        <Association Name="FK__PropertyI__Prope__49C3F6B7">
           <End Role="Property" Type="Self.Property" Multiplicity="1" />
           <End Role="PropertyImage" Type="Self.PropertyImage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -502,7 +510,7 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Reservation" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__PropertyI__Prope__35BCFE0A" Association="Self.FK__PropertyI__Prope__35BCFE0A">
+          <AssociationSet Name="FK__PropertyI__Prope__49C3F6B7" Association="Self.FK__PropertyI__Prope__49C3F6B7">
             <End Role="Property" EntitySet="Properties" />
             <End Role="PropertyImage" EntitySet="PropertyImages" />
           </AssociationSet>
@@ -520,9 +528,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MyDbModelStoreContainer" CdmEntityContainer="MyDbEntities">
+        <EntityContainerMapping StorageEntityContainer="MyDbStoreContainer" CdmEntityContainer="MyDbEntities">
           <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="MyDbModel.C__MigrationHistory">
+            <EntityTypeMapping TypeName="MyDb.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -532,7 +540,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="MyDbModel.AspNetRole">
+            <EntityTypeMapping TypeName="MyDb.AspNetRole">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -540,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="MyDbModel.AspNetUserClaim">
+            <EntityTypeMapping TypeName="MyDb.AspNetUserClaim">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -550,7 +558,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="MyDbModel.AspNetUserLogin">
+            <EntityTypeMapping TypeName="MyDb.AspNetUserLogin">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -559,7 +567,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="MyDbModel.AspNetUser">
+            <EntityTypeMapping TypeName="MyDb.AspNetUser">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -592,7 +600,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Properties">
-            <EntityTypeMapping TypeName="MyDbModel.Property">
+            <EntityTypeMapping TypeName="MyDb.Property">
               <MappingFragment StoreEntitySet="Property">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -613,16 +621,20 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PropertyImages">
-            <EntityTypeMapping TypeName="MyDbModel.PropertyImage">
+            <EntityTypeMapping TypeName="MyDb.PropertyImage">
               <MappingFragment StoreEntitySet="PropertyImage">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="main" ColumnName="main" />
+                <ScalarProperty Name="bedroom" ColumnName="bedroom" />
+                <ScalarProperty Name="livingroom" ColumnName="livingroom" />
+                <ScalarProperty Name="bathroom" ColumnName="bathroom" />
+                <ScalarProperty Name="kitchen" ColumnName="kitchen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reservations">
-            <EntityTypeMapping TypeName="MyDbModel.Reservation">
+            <EntityTypeMapping TypeName="MyDb.Reservation">
               <MappingFragment StoreEntitySet="Reservation">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -635,7 +647,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="MyDbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="MyDb.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>

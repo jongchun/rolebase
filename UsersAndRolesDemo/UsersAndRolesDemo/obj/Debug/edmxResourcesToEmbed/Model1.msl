@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MyDbModelStoreContainer" CdmEntityContainer="MyDbEntities">
+  <EntityContainerMapping StorageEntityContainer="MyDbStoreContainer" CdmEntityContainer="MyDbEntities">
     <EntitySetMapping Name="C__MigrationHistory">
-      <EntityTypeMapping TypeName="MyDbModel.C__MigrationHistory">
+      <EntityTypeMapping TypeName="MyDb.C__MigrationHistory">
         <MappingFragment StoreEntitySet="__MigrationHistory">
           <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
           <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetRoles">
-      <EntityTypeMapping TypeName="MyDbModel.AspNetRole">
+      <EntityTypeMapping TypeName="MyDb.AspNetRole">
         <MappingFragment StoreEntitySet="AspNetRoles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserClaims">
-      <EntityTypeMapping TypeName="MyDbModel.AspNetUserClaim">
+      <EntityTypeMapping TypeName="MyDb.AspNetUserClaim">
         <MappingFragment StoreEntitySet="AspNetUserClaims">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -30,7 +30,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserLogins">
-      <EntityTypeMapping TypeName="MyDbModel.AspNetUserLogin">
+      <EntityTypeMapping TypeName="MyDb.AspNetUserLogin">
         <MappingFragment StoreEntitySet="AspNetUserLogins">
           <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
           <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -39,7 +39,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="MyDbModel.AspNetUser">
+      <EntityTypeMapping TypeName="MyDb.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -72,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Properties">
-      <EntityTypeMapping TypeName="MyDbModel.Property">
+      <EntityTypeMapping TypeName="MyDb.Property">
         <MappingFragment StoreEntitySet="Property">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -93,16 +93,20 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PropertyImages">
-      <EntityTypeMapping TypeName="MyDbModel.PropertyImage">
+      <EntityTypeMapping TypeName="MyDb.PropertyImage">
         <MappingFragment StoreEntitySet="PropertyImage">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="main" ColumnName="main" />
+          <ScalarProperty Name="bedroom" ColumnName="bedroom" />
+          <ScalarProperty Name="livingroom" ColumnName="livingroom" />
+          <ScalarProperty Name="bathroom" ColumnName="bathroom" />
+          <ScalarProperty Name="kitchen" ColumnName="kitchen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reservations">
-      <EntityTypeMapping TypeName="MyDbModel.Reservation">
+      <EntityTypeMapping TypeName="MyDb.Reservation">
         <MappingFragment StoreEntitySet="Reservation">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -115,7 +119,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AspNetUserRoles" TypeName="MyDbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="MyDb.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
       <EndProperty Name="AspNetRoles">
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>

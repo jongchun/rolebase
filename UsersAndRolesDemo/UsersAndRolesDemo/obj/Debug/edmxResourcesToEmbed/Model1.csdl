@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="MyDb" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="C__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -96,7 +96,7 @@
     <Property Name="availableDates" Type="DateTime" Precision="0" />
     <Property Name="dimensions" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="AspNetUser" Relationship="Self.FK__Property__UserId__32E0915F" FromRole="Property" ToRole="AspNetUsers" />
-    <NavigationProperty Name="PropertyImages" Relationship="Self.FK__PropertyI__Prope__35BCFE0A" FromRole="Property" ToRole="PropertyImage" />
+    <NavigationProperty Name="PropertyImages" Relationship="Self.FK__PropertyI__Prope__49C3F6B7" FromRole="Property" ToRole="PropertyImage" />
     <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__Prope__398D8EEE" FromRole="Property" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="PropertyImage">
@@ -105,8 +105,12 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PropertyId" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Property" Relationship="Self.FK__PropertyI__Prope__35BCFE0A" FromRole="PropertyImage" ToRole="Property" />
+    <Property Name="main" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bedroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="livingroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bathroom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="kitchen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Property" Relationship="Self.FK__PropertyI__Prope__49C3F6B7" FromRole="PropertyImage" ToRole="Property" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -175,7 +179,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PropertyI__Prope__35BCFE0A">
+  <Association Name="FK__PropertyI__Prope__49C3F6B7">
     <End Role="Property" Type="Self.Property" Multiplicity="1" />
     <End Role="PropertyImage" Type="Self.PropertyImage" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,7 +232,7 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Reservation" EntitySet="Reservations" />
     </AssociationSet>
-    <AssociationSet Name="FK__PropertyI__Prope__35BCFE0A" Association="Self.FK__PropertyI__Prope__35BCFE0A">
+    <AssociationSet Name="FK__PropertyI__Prope__49C3F6B7" Association="Self.FK__PropertyI__Prope__49C3F6B7">
       <End Role="Property" EntitySet="Properties" />
       <End Role="PropertyImage" EntitySet="PropertyImages" />
     </AssociationSet>
