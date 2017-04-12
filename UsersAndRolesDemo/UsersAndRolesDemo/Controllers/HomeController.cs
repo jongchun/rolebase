@@ -229,5 +229,10 @@ namespace UsersAndRolesDemo.Controllers
             }
             return View();
         }
+
+        public ActionResult Reservation()
+        {
+            return View();
+        }
     }
 }
