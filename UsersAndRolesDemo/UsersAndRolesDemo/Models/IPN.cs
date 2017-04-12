@@ -20,9 +20,9 @@ namespace UsersAndRolesDemo.Models
         public string fname { get; set; }
         [Display(Name = "Last Name")]
         public string lname { get; set; }
-        [Display(Name = "Buyer Email")]
+        [Display(Name = "Renter Email")]
         public string buyerEmail { get; set; }
-        [Display(Name = "Total Reservations")]
+        [Display(Name = "# of Nights Reserved")]
         public string quantity { get; set; }
         [Display(Name = "Transaction Amount")]
         [DataType(DataType.Currency)]
