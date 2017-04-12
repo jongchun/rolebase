@@ -44,7 +44,11 @@ GO
 CREATE TABLE PropertyImage(
 	Id int IDENTITY(1,1) PRIMARY KEY,
 	PropertyId int NOT NULL,
-	name varbinary(MAX),
+	main nvarchar(MAX),
+	bedroom nvarchar(MAX),
+	livingroom nvarchar(MAX),
+	bathroom nvarchar(MAX),
+	kitchen nvarchar(MAX),
 	FOREIGN KEY(PropertyId) REFERENCES Property(Id)
 );
 
