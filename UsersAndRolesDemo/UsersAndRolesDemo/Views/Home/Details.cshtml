@@ -6,16 +6,40 @@
 }
 
 <div class="panel panel-default">
-<div class="panel-body">
-    <h1>@Html.DisplayFor(model => model.title)</h1>
-    <div>@Html.DisplayFor(model => model.summary)</div>
-    <div>@Html.DisplayFor(model => model.builtYear)</div>
-    <div>@Html.DisplayFor(model => model.address)</div>
-    <div>Price: @Html.DisplayFor(model => model.baseRate)/Day</div>
-    
+    <div class="panel-body">
+        <h1>@Html.DisplayFor(model => model.title)</h1>
+        <div>@Html.DisplayFor(model => model.summary)</div>
+        <div>@Html.DisplayFor(model => model.builtYear)</div>
+        <div>@Html.DisplayFor(model => model.address)</div>
+        <div>Price: @Html.DisplayFor(model => model.baseRate)/Day</div>
+    </div>
 </div>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="thumbnail">
+            <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().main)" class="img-responsive" />
+            <div class="caption"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="thumbnail">
+            <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().bedroom)" class="img-responsive" />
+            <div class="caption"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="thumbnail">
+            <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().livingroom)" class="img-responsive" />
+            <div class="caption"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="thumbnail">
+            <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().bathroom)" class="img-responsive" />
+            <div class="caption"></div>
+        </div>
+    </div>
 </div>
-
 <div class="panel panel-default">
     <div class="panel-heading">Property Details</div>
     <div class="panel-body">

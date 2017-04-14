@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -66,54 +67,15 @@ namespace UsersAndRolesDemo.Controllers
         //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
         public ActionResult Create([Bind(Exclude ="Id")]PostPropertyVM property)
         {
-            /*
-            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager
-            = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
-            */
-
-
-            //IdentityUser identityUser = manager.Find(login.UserName,
-            //                                                 login.Password);
-            //string user = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
-                foreach (string fileName in Request.Files)
-                {
-                    HttpPostedFileBase file = Request.Files[fileName];
-                    string imagename = Guid.NewGuid() + "_" + file.FileName;
 
-                }
                 OwnerRepo or = new OwnerRepo();
-                if(!or.PostProperty(property, User.Identity.GetUserName()))
+                if(!or.PostProperty(property, User.Identity.GetUserName(), SaveImages()))
                 {
                     return View(property);
                 }
-                //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-                //UserManager<IdentityUser> manager
-                //= new UserManager<IdentityUser>(userStore);
-                //IdentityUser identityUser = manager.Find(login.UserName,
-                //                                                 login.Password);
-                /*
-                var test = new Property {
-                    UserId = identityUser.Id,
-                    summary = property.Summary,
-                    propertyType = property.PropertyType,
-                    numBedrooms = property.NumBedrooms,
-                    numWashrooms = property.NumWashrooms,
-                    kitchen = property.Kitchen,
-                    baseRate = property.BaseRate,
-                    address = property.Address,
-                    builtYear = property.BuiltYear,
-                    smokingAllowed = property.SmokingAllowed,
-                    maxNumberGuests = property.MaxNumberGuests,
-                    availableDates = property.AvailableDates,
-                    dimensions = property.Dimensions
-                };
-                db.Properties.Add(test);
-                db.SaveChanges();
-                */
+
                 return RedirectToAction("Index");
             }
 
@@ -195,7 +157,7 @@ namespace UsersAndRolesDemo.Controllers
             }*/
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
             OwnerRepo or = new OwnerRepo();
-            if(or.EditProperty(property, User.Identity.GetUserName()))
+            if(or.EditProperty(property, User.Identity.GetUserName(), SaveImages()))
             {
                 return RedirectToAction("Index");
             }
@@ -222,10 +184,41 @@ namespace UsersAndRolesDemo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Property property = db.Properties.Find(id);
-            db.Properties.Remove(property);
-            db.SaveChanges();
+            OwnerRepo or = new OwnerRepo();
+            if (!or.DeleteProperty(id))
+            {
+                Property property = db.Properties.Find(id);
+                return View(property);
+            }
             return RedirectToAction("Index");
+        }
+
+        // Save images to Content\images\{username}\ and return imagelist
+        public List<string> SaveImages()
+        {
+            List<string> imageList = new List<string>();
+            var directoryToSave = Server.MapPath(Url.Content("~/Content/Images/") + User.Identity.GetUserName());
+            
+            if (!Directory.Exists(directoryToSave))
+            {
+                Directory.CreateDirectory(directoryToSave);
+            }
+            foreach (string fileName in Request.Files)
+            {
+                HttpPostedFileBase file = Request.Files[fileName];
+                if (file.ContentLength > 0)
+                {
+                    string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                    file.SaveAs(Path.Combine(directoryToSave, filename));
+                    imageList.Add("~/Content/Images/" + User.Identity.GetUserName() + "/"+ filename);
+                }
+                else
+                {
+                    imageList.Add(null);
+                }
+            }
+
+            return imageList;
         }
 
         protected override void Dispose(bool disposing)

@@ -19,9 +19,9 @@ namespace UsersAndRolesDemo.Controllers
         private MyDbEntities db = new MyDbEntities();
 
         public ActionResult Index()
-        {
-            
-            return View(db.Properties.ToList());
+        {//db.Properties.ToList()
+            var temp = db.Properties.Include(i => i.PropertyImages).ToList();
+            return View(temp);
         }
 
         public ActionResult Properties()

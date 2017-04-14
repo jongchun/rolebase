@@ -64,5 +64,11 @@ namespace UsersAndRolesDemo.Models
         [Required]
         [Display(Name = "Dimensions")]
         public string Dimensions { get; set; }
+
+        //public string MainPic { get; set; }
+        //public string BedroomPic { get; set; }
+        //public string LivingroomPic { get; set; }
+        //public string BathroomPic { get; set; }
+        //public string KitchenPic { get; set; }
     }
 }

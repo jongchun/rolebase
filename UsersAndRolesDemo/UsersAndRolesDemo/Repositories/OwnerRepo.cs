@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using UsersAndRolesDemo;
 using UsersAndRolesDemo.Models;
 
 namespace UsersAndRolesDemo.Repositories
@@ -13,12 +14,21 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public Boolean PostProperty(PostPropertyVM property, string username)
+        public Boolean PostProperty(PostPropertyVM property, string username, List<string> imageList)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(username);
+
+            var images = new PropertyImage()
+            {
+                main = imageList[0],
+                bedroom = imageList[1],
+                livingroom = imageList[2],
+                bathroom = imageList[3],
+                kitchen = imageList[4]
+            };
 
             var unit = new Property()
             {
@@ -37,7 +47,12 @@ namespace UsersAndRolesDemo.Repositories
                 availableDates = property.AvailableDates,
                 dimensions = property.Dimensions
             };
+            unit.PropertyImages.Add(images); 
             db.Properties.Add(unit);
+
+            
+            
+            //db.PropertyImages.Add(images);
             try
             {
                 db.SaveChanges();
@@ -71,9 +86,16 @@ namespace UsersAndRolesDemo.Repositories
 
             return propertyVM;
         }
+        /*
+        public List<string> GetImages(int id)
+        {
+            List<string> images = new List<string>();
 
 
-        public Boolean EditProperty(PostPropertyVM property, string username)
+            return images;
+        }
+        */
+        public Boolean EditProperty(PostPropertyVM property, string username, List<string> imageList)
         {/*
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
@@ -85,8 +107,31 @@ namespace UsersAndRolesDemo.Repositories
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(username);
-            
-            var test = new Property
+
+            PropertyImage propertyimage = new PropertyImage();
+            var temp = db.PropertyImages.Where(i => i.PropertyId == property.Id).FirstOrDefault();
+            if (imageList[0] != null)
+            {
+                temp.main = imageList[0];
+            }
+            if (imageList[1] != null)
+            {
+                temp.bedroom = imageList[1];
+            }
+            if (imageList[2] != null)
+            {
+                temp.livingroom = imageList[2];
+            }
+            if (imageList[3] != null)
+            {
+                temp.bathroom = imageList[3];
+            }
+            if (imageList[4] != null)
+            {
+                temp.kitchen = imageList[4];
+            }
+
+            Property test = new Property
             {
                 Id = (int)property.Id,
                 UserId = identityUser.Id,
@@ -106,6 +151,8 @@ namespace UsersAndRolesDemo.Repositories
             };
 
             db.Entry(test).State = EntityState.Modified;
+            db.Entry(temp).State = EntityState.Modified;
+
             try
             {
                 db.SaveChanges();
@@ -115,6 +162,22 @@ namespace UsersAndRolesDemo.Repositories
                 return false;
             }
             
+            return true;
+        }
+
+        public Boolean DeleteProperty(int id)
+        {
+            PropertyImage image = db.PropertyImages.Where(i => i.PropertyId == id).FirstOrDefault();
+            Property property = db.Properties.Find(id);
+            db.PropertyImages.Remove(image);
+            db.Properties.Remove(property);
+            try
+            {
+                db.SaveChanges();
+            }catch (Exception)
+            {
+                return false;
+            }
             return true;
         }
     }
