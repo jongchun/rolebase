@@ -13,22 +13,28 @@ using UsersAndRolesDemo;
 
 namespace UsersAndRolesDemo.Controllers
 {
+
+    // *** Only copy things from here to OwnerPropertyController.cs but in baby steps. Test after each step *.
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class PropertiesController : ApiController
+    public class _OwnerPropertyContoller : ApiController
     {
         private MyDbEntities db = new MyDbEntities();
 
-        // GET: api/Properties
+        // GET: api/_OwnerPropertyContoller
+        [HttpGet]
         public IQueryable<Property> GetProperties()
         {
-            db.Configuration.LazyLoadingEnabled = false;
-            return db.Properties.Include(i => i.PropertyImages);
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
+            return context.Properties;
         }
-/*
-        // GET: api/Properties/5
+
+        // GET: api/_OwnerPropertyContoller/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult GetProperty(int id)
         {
+            MyDbEntities context = new MyDbEntities();
+            context.Configuration.LazyLoadingEnabled = false;
             Property property = db.Properties.Find(id);
             if (property == null)
             {
@@ -36,9 +42,11 @@ namespace UsersAndRolesDemo.Controllers
             }
 
             return Ok(property);
+
         }
 
-        // PUT: api/Properties/5
+        //no adjustment made bellow 
+        // PUT: api/_OwnerPropertyContoller/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProperty(int id, Property property)
         {
@@ -73,7 +81,7 @@ namespace UsersAndRolesDemo.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Properties
+        // POST: api/_OwnerPropertyContoller
         [ResponseType(typeof(Property))]
         public IHttpActionResult PostProperty(Property property)
         {
@@ -88,7 +96,7 @@ namespace UsersAndRolesDemo.Controllers
             return CreatedAtRoute("DefaultApi", new { id = property.Id }, property);
         }
 
-        // DELETE: api/Properties/5
+        // DELETE: api/_OwnerPropertyContoller/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult DeleteProperty(int id)
         {
@@ -103,7 +111,7 @@ namespace UsersAndRolesDemo.Controllers
 
             return Ok(property);
         }
-        */
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -112,11 +120,10 @@ namespace UsersAndRolesDemo.Controllers
             }
             base.Dispose(disposing);
         }
-        /*
+
         private bool PropertyExists(int id)
         {
             return db.Properties.Count(e => e.Id == id) > 0;
         }
-        */
     }
 }
