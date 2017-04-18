@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace UsersAndRolesDemo
 {
-    public static class WebApiConfig2
+    public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {

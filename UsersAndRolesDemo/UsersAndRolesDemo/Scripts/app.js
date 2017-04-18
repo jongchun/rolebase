@@ -1,4 +1,6 @@
-﻿var serviceUrl = './api/_OwnerPropertyContoller';
+﻿// var serviceUrl = './api/_OwnerPropertyContoller'; // **** OLD
+var serviceUrl = './api/OwnerProperty';
+
 
 function sendRequest() {
     $("#properties").replaceWith("<span id='value1'></span>");

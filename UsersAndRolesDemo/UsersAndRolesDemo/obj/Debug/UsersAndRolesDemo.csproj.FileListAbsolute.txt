@@ -273,7 +273,6 @@ C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Webpages.Razor.xml
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Helpers.xml
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\System.Web.Mvc.xml
-C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.dll
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.pdb
 D:\BCIT\ProjectPhase\2\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\csc.exe
