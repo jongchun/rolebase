@@ -338,6 +338,7 @@
     <Content Include="Views\Account\OwnerProfile.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Reservation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
