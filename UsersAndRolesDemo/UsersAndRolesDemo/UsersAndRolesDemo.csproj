@@ -341,6 +341,7 @@
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Reservation.cshtml" />
+    <Content Include="Views\Home\PayPal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -35,5 +35,7 @@ namespace UsersAndRolesDemo
         public virtual DbSet<Reservation> Reservations { get; set; }
 
         public System.Data.Entity.DbSet<UsersAndRolesDemo.Models.ReservationVM> ReservationVMs { get; set; }
+
+        public System.Data.Entity.DbSet<UsersAndRolesDemo.Models.IPN> IPNs { get; set; }
     }
 }
