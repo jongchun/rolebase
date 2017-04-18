@@ -14,13 +14,13 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public Boolean PostProperty(PostPropertyVM property, string username, List<string> imageList)
-        {
+        public Boolean PostProperty(PostPropertyVM property, string userid, List<string> imageList)
+        {/*
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(username);
-
+            */
             var images = new PropertyImage()
             {
                 main = imageList[0],
@@ -32,7 +32,7 @@ namespace UsersAndRolesDemo.Repositories
 
             var unit = new Property()
             {
-                UserId = identityUser.Id,
+                UserId = userid,
                 title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
@@ -96,7 +96,7 @@ namespace UsersAndRolesDemo.Repositories
             return images;
         }
         */
-        public Boolean EditProperty(PostPropertyVM property, string username, List<string> imageList)
+        public Boolean EditProperty(PostPropertyVM property, string userid, List<string> imageList)
         {/*
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
@@ -105,9 +105,9 @@ namespace UsersAndRolesDemo.Repositories
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);*/
 
-            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.FindByName(username);
+            //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            //UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            //IdentityUser identityUser = manager.FindByName(username);
 
             //PropertyImage propertyimage = new PropertyImage();
             var propertyimage = db.PropertyImages.Where(i => i.PropertyId == property.Id).FirstOrDefault();
@@ -135,7 +135,7 @@ namespace UsersAndRolesDemo.Repositories
             Property updatedProperty = new Property
             {
                 Id = (int)property.Id,
-                UserId = identityUser.Id,
+                UserId = userid,
                 title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,

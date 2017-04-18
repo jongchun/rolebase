@@ -23,8 +23,7 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult Index()
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager
-            = new UserManager<IdentityUser>(userStore);
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
             
             ViewBag.Username = User.Identity.Name;
@@ -69,9 +68,12 @@ namespace UsersAndRolesDemo.Controllers
         {
             if (ModelState.IsValid)
             {
+                UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+                UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+                IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
 
                 OwnerRepo or = new OwnerRepo();
-                if(!or.PostProperty(property, User.Identity.GetUserName(), SaveImages()))
+                if(!or.PostProperty(property, identityUser.Id, SaveImages(identityUser.Id)))
                 {
                     return View(property);
                 }
@@ -108,7 +110,7 @@ namespace UsersAndRolesDemo.Controllers
         {
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
             OwnerRepo or = new OwnerRepo();
-            if(or.EditProperty(property, User.Identity.GetUserName(), SaveImages()))
+            if(or.EditProperty(property, property.UserId, SaveImages(property.UserId)))
             {
                 return RedirectToAction("Index");
             }
@@ -145,14 +147,14 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         // Save images to Content\images\{username}\ and return imagelist
-        public List<string> SaveImages()
-        {/*
+        public List<string> SaveImages(string userid)
+        {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.FindById();
-           */ 
+            IdentityUser identityUser = manager.FindById(userid);
+           
             List<string> imageList = new List<string>();
-            var directoryToSave = Server.MapPath(Url.Content("~/Content/Images/") + User.Identity.GetUserName());
+            var directoryToSave = Server.MapPath(Url.Content("~/Content/Images/") + identityUser.UserName);
             
             if (!Directory.Exists(directoryToSave))
             {
@@ -165,7 +167,7 @@ namespace UsersAndRolesDemo.Controllers
                 {
                     string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
                     file.SaveAs(Path.Combine(directoryToSave, filename));
-                    imageList.Add("~/Content/Images/" + User.Identity.GetUserName() + "/"+ filename);
+                    imageList.Add("~/Content/Images/" + identityUser.UserName + "/"+ filename);
                 }
                 else
                 {

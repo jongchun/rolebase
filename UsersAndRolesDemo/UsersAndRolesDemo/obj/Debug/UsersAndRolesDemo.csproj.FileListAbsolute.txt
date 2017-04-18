@@ -1036,3 +1036,4 @@ C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Xml.XPath.dll
 C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\a01002633\Source\Repos\rolebase\UsersAndRolesDemo\UsersAndRolesDemo\obj\Debug\UsersAndRolesDemo.csprojResolveAssemblyReference.cache

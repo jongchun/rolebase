@@ -1,5 +1,6 @@
 ﻿// var serviceUrl = './api/_OwnerPropertyContoller'; // **** OLD
-var serviceUrl = './api/OwnerProperty';
+//var serviceUrl = './api/OwnerProperty';
+var serviceUrl = './api/Properties'
 
 
 function sendRequest() {
