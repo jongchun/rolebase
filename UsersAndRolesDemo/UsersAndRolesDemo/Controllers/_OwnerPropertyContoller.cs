@@ -13,12 +13,15 @@ using UsersAndRolesDemo;
 
 namespace UsersAndRolesDemo.Controllers
 {
+
+    // *** Only copy things from here to OwnerPropertyController.cs but in baby steps. Test after each step *.
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class _OwnerPropertyContoller : ApiController
     {
         private MyDbEntities db = new MyDbEntities();
 
         // GET: api/_OwnerPropertyContoller
+        [HttpGet]
         public IQueryable<Property> GetProperties()
         {
             MyDbEntities context = new MyDbEntities();

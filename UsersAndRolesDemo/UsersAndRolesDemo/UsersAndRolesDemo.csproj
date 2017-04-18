@@ -246,6 +246,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OwnerController.cs" />
+    <Compile Include="Controllers\OwnerPropertyController.cs" />
     <Compile Include="Controllers\_AdminPropertyContoller.cs" />
     <Compile Include="Controllers\_OwnerPropertyContoller.cs" />
     <Compile Include="C__MigrationHistory.cs">

@@ -15,13 +15,17 @@ namespace UsersAndRolesDemo
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             
-            GlobalConfiguration.Configure(WebApiConfig2.Register);
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
-            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            //GlobalConfiguration.Configure(WebApiConfig2.Register);
+            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+            //.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
 
         }
