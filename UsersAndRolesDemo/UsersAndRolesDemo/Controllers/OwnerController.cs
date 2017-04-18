@@ -84,38 +84,16 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         // GET: Owner/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            /*
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             
-            Property property = db.Properties.Find(id);
-
-            if (property == null)
-            {
-                return HttpNotFound();
-            }
-
-            PostPropertyVM propertyVM = new PostPropertyVM();
-            propertyVM.Id = id;
-            propertyVM.PropertyType = property.propertyType;
-            propertyVM.Summary = property.summary;
-            propertyVM.NumBedrooms = (int)property.numBedrooms;
-            propertyVM.NumWashrooms = (int)property.numWashrooms;
-            propertyVM.Kitchen = (int)property.kitchen;
-            propertyVM.BaseRate = (int)property.baseRate;
-            propertyVM.Address = property.address;
-            propertyVM.BuiltYear = property.builtYear;
-            propertyVM.SmokingAllowed = property.smokingAllowed;
-            propertyVM.MaxNumberGuests = property.maxNumberGuests;
-            propertyVM.AvailableDates = (DateTime)property.availableDates;
-            propertyVM.Dimensions = property.dimensions;
-
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
-            */
+
             OwnerRepo or = new OwnerRepo();
             
             return View(or.GetProperty(id));
@@ -128,33 +106,6 @@ namespace UsersAndRolesDemo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PostPropertyVM property)
         {
-            /*
-            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.FindByName(User.Identity.GetUserName());
-            
-            if (ModelState.IsValid)
-            {
-                var test = new Property
-                {
-                    Id = property.Id,
-                    UserId = identityUser.Id,
-                    propertyType = property.PropertyType,
-                    numBedrooms = property.NumBedrooms,
-                    numWashrooms = property.NumWashrooms,
-                    kitchen = property.Kitchen,
-                    baseRate = property.BaseRate,
-                    address = property.Address,
-                    builtYear = property.BuiltYear, 
-                    smokingAllowed = property.SmokingAllowed,
-                    maxNumberGuests = property.MaxNumberGuests,
-                    availableDates = property.AvailableDates,
-                    dimensions = property.Dimensions
-                };
-                db.Entry(test).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }*/
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", property.UserId);
             OwnerRepo or = new OwnerRepo();
             if(or.EditProperty(property, User.Identity.GetUserName(), SaveImages()))
@@ -195,7 +146,11 @@ namespace UsersAndRolesDemo.Controllers
 
         // Save images to Content\images\{username}\ and return imagelist
         public List<string> SaveImages()
-        {
+        {/*
+            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            IdentityUser identityUser = manager.FindById();
+           */ 
             List<string> imageList = new List<string>();
             var directoryToSave = Server.MapPath(Url.Content("~/Content/Images/") + User.Identity.GetUserName());
             
