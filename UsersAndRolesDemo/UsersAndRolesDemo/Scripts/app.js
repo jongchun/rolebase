@@ -20,8 +20,24 @@ function sendRequest() {
 }
 function callback(val) {
     $("#value1").replaceWith("<ul id='properties' />");
-    var str = "propertyTitle: " + val.title + "propertySummary: " + val.summary + " NumBedrooms: " + val.numBedrooms + " NumWashrooms: " + val.numWashrooms + " Kitchen: " + val.kitchen + val.smokingAllowed + " max Number Guests" + val.maxNumberGuests + " Dimensions:" + val.dimensions;
+    //var str =  "propertyTitle: " + val.title  + "propertySummary: " + val.summary + " Nummer Bedrooms: " + val.numBedrooms + " Nummer Washrooms: " + val.numWashrooms + " Kitchen: " + val.kitchen + val.smokingAllowed + " max Number Guests" + val.maxNumberGuests + " Dimensions:" + val.dimensions;
+    var str = "propertyTitle: " + val.title
+    var strSummary = "propertySummary: " + val.summary
+    var strBedroom = " Nummer Bedrooms: " + val.numBedrooms
+    var strWashroom = val.numBedrooms + " Nummer Washrooms: " + val.numWashrooms
+    var strKitchen = " Kitchen: " + val.kitchen
+    var strSmoking = "smokingAllowed" + val.smokingAllowed
+    var strMaxGuests = "max Number Guests" + val.maxNumberGuests
+    var strDimensions = " Dimensions:" + val.dimensions
     $('<li/>', { text: str }).appendTo($('#properties'));
+    $('<li/>', { text: strSummary }).appendTo($('#properties'));
+    $('<li/>', { text: strBedroom }).appendTo($('#properties'));
+    $('<li/>', { text: strWashroom }).appendTo($('#properties'));
+    $('<li/>', { text: strKitchen }).appendTo($('#properties'));
+    $('<li/>', { text: strSmoking }).appendTo($('#properties'));
+    $('<li/>', { text: strMaxGuests }).appendTo($('#properties'));
+    $('<li/>', { text: strDimensions }).appendTo($('#properties'));
+    $('<br/>').appendTo($('#properties'));
 }
 
 // Deletes and refreshes list.
