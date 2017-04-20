@@ -165,7 +165,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\custom2.css" />
+    <Content Include="Content\Images\a17.png" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\no_profile_image.png" />
+    <Content Include="Content\Images\t01.png" />
     <Content Include="Content\img.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\theme.css" />
@@ -222,6 +225,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jssor.slider-23.1.1.mini.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -342,6 +346,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Reservation.cshtml" />
     <Content Include="Views\Home\PayPal.cshtml" />
+    <Content Include="Views\Home\Success.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
