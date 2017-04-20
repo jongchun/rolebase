@@ -31,4 +31,8 @@ namespace UsersAndRolesDemo.Models
         public string paymentStatus { get; set; }
 
     }
+    public class PaymentNotificationDBContext : DbContext
+    {
+        public DbSet<IPN> ipns { get; set; }
+    }
 }
