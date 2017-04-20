@@ -33,8 +33,8 @@ namespace UsersAndRolesDemo.Models
         //[Display(Name = "Property Name")]
         public string PropertyName { get; set; }
 
-        public string Email { get; set; }
+        //public string Email { get; set; }
 
-        public decimal TotalMoney { get; set; }
+        public decimal? TotalMoney { get; set; }
     }
 }

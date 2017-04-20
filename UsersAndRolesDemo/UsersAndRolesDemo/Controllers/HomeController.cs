@@ -242,7 +242,6 @@ namespace UsersAndRolesDemo.Controllers
             ViewBag.Session = this.Session.SessionID;
             PaymentNotificationDBContext context = new PaymentNotificationDBContext();
             ReservationVM rvm = new ReservationVM();
-            //rvm.Email = 
 
             if (id == null)
             {
@@ -254,7 +253,11 @@ namespace UsersAndRolesDemo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(property);
+
+            rvm.PropertyName = property.title;
+            rvm.TotalMoney = property.baseRate;
+
+            return View(rvm);
 
             //return View();
         }
