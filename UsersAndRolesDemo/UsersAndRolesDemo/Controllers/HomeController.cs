@@ -242,7 +242,7 @@ namespace UsersAndRolesDemo.Controllers
             ViewBag.Session = this.Session.SessionID;
             PaymentNotificationDBContext context = new PaymentNotificationDBContext();
             ReservationVM rvm = new ReservationVM();
-            rvm.
+            //rvm.Email = 
 
             if (id == null)
             {
