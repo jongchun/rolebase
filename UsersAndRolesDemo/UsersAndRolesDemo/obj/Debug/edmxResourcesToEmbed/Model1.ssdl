@@ -115,11 +115,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="PropertyId" Type="int" Nullable="false" />
-    <Property Name="startDate" Type="date" />
-    <Property Name="endDate" Type="date" />
-    <Property Name="numberGuests" Type="varchar" MaxLength="2" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
     <Property Name="status" Type="varchar" MaxLength="15" />
-    <Property Name="totalAmount" Type="money" />
+    <Property Name="totalAmount" Type="money" Nullable="false" />
   </EntityType>
   <Association Name="FK__Property__UserId__32E0915F">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
@@ -145,7 +148,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reservati__Prope__398D8EEE">
+  <Association Name="FK__Reservati__Prope__4D94879B">
     <End Role="Property" Type="Self.Property" Multiplicity="1" />
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
     <ReferentialConstraint>
@@ -157,7 +160,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reservati__UserI__38996AB5">
+  <Association Name="FK__Reservati__UserI__4CA06362">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
     <ReferentialConstraint>
@@ -243,11 +246,11 @@
       <End Role="Property" EntitySet="Property" />
       <End Role="PropertyImage" EntitySet="PropertyImage" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reservati__Prope__398D8EEE" Association="Self.FK__Reservati__Prope__398D8EEE">
+    <AssociationSet Name="FK__Reservati__Prope__4D94879B" Association="Self.FK__Reservati__Prope__4D94879B">
       <End Role="Property" EntitySet="Property" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reservati__UserI__38996AB5" Association="Self.FK__Reservati__UserI__38996AB5">
+    <AssociationSet Name="FK__Reservati__UserI__4CA06362" Association="Self.FK__Reservati__UserI__4CA06362">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>

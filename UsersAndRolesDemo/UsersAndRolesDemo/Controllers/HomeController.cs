@@ -236,11 +236,27 @@ namespace UsersAndRolesDemo.Controllers
             return View();
         }
 
-        public ActionResult Reservation()
+        public ActionResult Reservation(int? id)
         {
+
             ViewBag.Session = this.Session.SessionID;
             PaymentNotificationDBContext context = new PaymentNotificationDBContext();
-            return View();
+            ReservationVM rvm = new ReservationVM();
+            rvm.
+
+            if (id == null)
+            {
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Properties");
+            }
+            Property property = db.Properties.Find(id);
+            if (property == null)
+            {
+                return HttpNotFound();
+            }
+            return View(property);
+
+            //return View();
         }
     }
 }

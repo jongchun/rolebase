@@ -29,5 +29,11 @@ namespace UsersAndRolesDemo.Models
         //[Required]
         //[Display(Name = "Base Rate Per Day")]
         //public decimal BaseRate { get; set; }
+
+        [Display(Name = "Property Name")]
+        public string PropertyName { get; set; }
+
+        //[Display(Name = "")]
+        //public string 
     }
 }
