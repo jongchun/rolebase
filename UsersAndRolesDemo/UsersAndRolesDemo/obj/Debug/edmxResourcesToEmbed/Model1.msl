@@ -111,9 +111,12 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="startDate" ColumnName="startDate" />
           <ScalarProperty Name="endDate" ColumnName="endDate" />
-          <ScalarProperty Name="numberGuests" ColumnName="numberGuests" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
         </MappingFragment>

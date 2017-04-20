@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6a54a9a0c16c4ca590a6770522b4c254" Name="Diagram1">
+      <Diagram DiagramId="bc5d5feb6b57481d982f0f898e97c8a3" Name="Diagram1">
         <EntityTypeShape EntityType="MyDb.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.AspNetRole" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.AspNetUser" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.Property" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MyDb.PropertyImage" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.AspNetRole" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.AspNetUser" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.Property" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDb.PropertyImage" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MyDb.Reservation" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
         <AssociationConnector Association="MyDb.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="MyDb.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="MyDb.FK__Property__UserId__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="MyDb.FK__Reservati__UserI__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDb.FK__Reservati__UserI__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="MyDb.FK__PropertyI__Prope__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="MyDb.FK__Reservati__Prope__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MyDb.FK__Reservati__Prope__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="MyDb.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

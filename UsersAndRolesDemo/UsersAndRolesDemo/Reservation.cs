@@ -17,11 +17,14 @@ namespace UsersAndRolesDemo
         public int Id { get; set; }
         public string UserId { get; set; }
         public int PropertyId { get; set; }
-        public Nullable<System.DateTime> startDate { get; set; }
-        public Nullable<System.DateTime> endDate { get; set; }
-        public string numberGuests { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public System.DateTime startDate { get; set; }
+        public System.DateTime endDate { get; set; }
         public string status { get; set; }
-        public Nullable<decimal> totalAmount { get; set; }
+        public decimal totalAmount { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
         public virtual Property Property { get; set; }
