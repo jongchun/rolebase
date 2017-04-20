@@ -30,10 +30,11 @@ namespace UsersAndRolesDemo.Models
         //[Display(Name = "Base Rate Per Day")]
         //public decimal BaseRate { get; set; }
 
-        [Display(Name = "Property Name")]
+        //[Display(Name = "Property Name")]
         public string PropertyName { get; set; }
 
-        //[Display(Name = "")]
-        //public string 
+        //public string Email { get; set; }
+
+        public decimal? TotalMoney { get; set; }
     }
 }
