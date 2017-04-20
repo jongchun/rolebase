@@ -52,6 +52,7 @@ namespace UsersAndRolesDemo.Controllers
         }
 
         // GET: Owner/Create
+        [Authorize(Roles = "Owner")]
         public ActionResult Create()
         {
             //ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email");
@@ -63,6 +64,7 @@ namespace UsersAndRolesDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Owner")]
         //public ActionResult Create([Bind(Include = "Id,UserId,propertyType,numBedrooms,numWashrooms,kitchen,baseRate,address,builtYear,smokingAllowed,maxNumberGuests,availableDates,dimensions")] Property property)
         public ActionResult Create([Bind(Exclude ="Id")]PostPropertyVM property)
         {
