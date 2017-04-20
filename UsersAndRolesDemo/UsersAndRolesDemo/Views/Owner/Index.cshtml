@@ -5,13 +5,17 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Index @ViewBag.Username</h2>
+<h2>Welcome @ViewBag.Username</h2>
 
+<h3>Properties</h3>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            Property ID
+        </th>
         <th>
             Property Type
         </th>
@@ -30,29 +34,83 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.propertyType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numBedrooms)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numWashrooms)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.baseRate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.propertyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numBedrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numWashrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.baseRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
 
+<h3>Reservations</h3>
+<table class="table">
+    <tr>
+        <th>
+            Property ID
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+            Total Amount
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        foreach (var rv in item.Reservations)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => rv.PropertyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => rv.startDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => rv.endDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => rv.totalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => rv.status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = rv.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = rv.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = rv.Id })
+                </td>
+            </tr>
+        }
+
+    }
 </table>
