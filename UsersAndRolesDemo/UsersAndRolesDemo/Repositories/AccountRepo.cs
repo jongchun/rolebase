@@ -55,7 +55,7 @@ namespace UsersAndRolesDemo.Repositories
             }
             if (result == null || result.Succeeded)
             {
-                if (user.profilePicture != null)
+                if (model.ProfilePicture != null)
                 {
                     user.profilePicture = model.ProfilePicture;
                 }
