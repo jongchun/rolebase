@@ -253,7 +253,8 @@ namespace UsersAndRolesDemo.Controllers
             {
                 return HttpNotFound();
             }
-
+            rvm.StartDate = DateTime.Today;
+            rvm.EndDate = DateTime.Today;
             rvm.PropertyName = property.title;
             rvm.TotalMoney = property.baseRate;
 
