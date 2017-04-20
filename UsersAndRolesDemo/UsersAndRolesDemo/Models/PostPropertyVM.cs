@@ -9,6 +9,7 @@ namespace UsersAndRolesDemo.Models
     public class PostPropertyVM
     {
         public int? Id { get; set; }
+        public string UserId { get; set; }
 
         [Required]
         [Display(Name = "Title")]

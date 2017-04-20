@@ -7,31 +7,28 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using UsersAndRolesDemo;
-using System.Web.Http.Cors;
 
 namespace UsersAndRolesDemo.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class _AdminPropertyContoller : ApiController
+    public class PropertiesController : ApiController
     {
         private MyDbEntities db = new MyDbEntities();
 
-        // GET: api/_AdminPropertyContoller
+        // GET: api/Properties
         public IQueryable<Property> GetProperties()
         {
-            MyDbEntities context = new MyDbEntities();
-            context.Configuration.LazyLoadingEnabled = false;
-            return context.Properties;
+            db.Configuration.LazyLoadingEnabled = false;
+            return db.Properties.Include(i => i.PropertyImages);
         }
-
-        // GET: api/_AdminPropertyContoller/5
+/*
+        // GET: api/Properties/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult GetProperty(int id)
         {
-            MyDbEntities context = new MyDbEntities();
-            context.Configuration.LazyLoadingEnabled = false;
             Property property = db.Properties.Find(id);
             if (property == null)
             {
@@ -41,7 +38,7 @@ namespace UsersAndRolesDemo.Controllers
             return Ok(property);
         }
 
-        // PUT: api/_AdminPropertyContoller/5
+        // PUT: api/Properties/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProperty(int id, Property property)
         {
@@ -76,36 +73,22 @@ namespace UsersAndRolesDemo.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/_AdminPropertyContoller
+        // POST: api/Properties
         [ResponseType(typeof(Property))]
         public IHttpActionResult PostProperty(Property property)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-                
             }
+
             db.Properties.Add(property);
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (PropertyExists(property.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = property.Id }, property);
         }
 
-        // DELETE: api/_AdminPropertyContoller/5
+        // DELETE: api/Properties/5
         [ResponseType(typeof(Property))]
         public IHttpActionResult DeleteProperty(int id)
         {
@@ -114,17 +97,13 @@ namespace UsersAndRolesDemo.Controllers
             {
                 return NotFound();
             }
-            else if (db.Properties.Where(p => p.UserId == property.UserId).Count() > 0)
-            {
-                return Content(HttpStatusCode.Conflict, "A foreign key reference exists.");
-            }
 
             db.Properties.Remove(property);
             db.SaveChanges();
 
             return Ok(property);
         }
-
+*/
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -133,10 +112,11 @@ namespace UsersAndRolesDemo.Controllers
             }
             base.Dispose(disposing);
         }
-
+/*
         private bool PropertyExists(int id)
         {
             return db.Properties.Count(e => e.Id == id) > 0;
         }
+*/
     }
 }

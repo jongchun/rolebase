@@ -20,11 +20,11 @@ namespace UsersAndRolesDemo.Models
 
         [Required]
         [Display(Name = "Reservation Start")]
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
         [Required]
         [Display(Name = "Reservation End")]
-        public int EndDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         //[Required]
         //[Display(Name = "Base Rate Per Day")]

@@ -1,0 +1,83 @@
+﻿@model UsersAndRolesDemo.Models.IPN
+
+@{
+    ViewBag.Title = "PayPal";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>PayPal</h2>
+
+<div>
+    <h4>IPN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.txTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.custom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.custom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.buyerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.buyerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.transactionID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

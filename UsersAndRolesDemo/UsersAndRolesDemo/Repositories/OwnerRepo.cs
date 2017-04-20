@@ -14,13 +14,13 @@ namespace UsersAndRolesDemo.Repositories
     {
         private MyDbEntities db = new MyDbEntities();
 
-        public Boolean PostProperty(PostPropertyVM property, string username, List<string> imageList)
-        {
+        public Boolean PostProperty(PostPropertyVM property, string userid, List<string> imageList)
+        {/*
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager
             = new UserManager<IdentityUser>(userStore);
             IdentityUser identityUser = manager.FindByName(username);
-
+            */
             var images = new PropertyImage()
             {
                 main = imageList[0],
@@ -32,7 +32,7 @@ namespace UsersAndRolesDemo.Repositories
 
             var unit = new Property()
             {
-                UserId = identityUser.Id,
+                UserId = userid,
                 title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
@@ -64,12 +64,13 @@ namespace UsersAndRolesDemo.Repositories
             return true;
         }
 
-        public PostPropertyVM GetProperty(int id)
+        public PostPropertyVM GetProperty(int? id)
         {
             Property property = db.Properties.Find(id);
 
             PostPropertyVM propertyVM = new PostPropertyVM();
             propertyVM.Id = id;
+            propertyVM.UserId = property.UserId;
             propertyVM.Title = property.title;
             propertyVM.PropertyType = property.propertyType;
             propertyVM.Summary = property.summary;
@@ -95,7 +96,7 @@ namespace UsersAndRolesDemo.Repositories
             return images;
         }
         */
-        public Boolean EditProperty(PostPropertyVM property, string username, List<string> imageList)
+        public Boolean EditProperty(PostPropertyVM property, string userid, List<string> imageList)
         {/*
            // Property property = db.Properties.Find(id);
             AspNetUser user = db.AspNetUsers
@@ -104,37 +105,37 @@ namespace UsersAndRolesDemo.Repositories
             var userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);*/
 
-            UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
-            UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
-            IdentityUser identityUser = manager.FindByName(username);
+            //UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
+            //UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
+            //IdentityUser identityUser = manager.FindByName(username);
 
-            PropertyImage propertyimage = new PropertyImage();
-            var temp = db.PropertyImages.Where(i => i.PropertyId == property.Id).FirstOrDefault();
+            //PropertyImage propertyimage = new PropertyImage();
+            var propertyimage = db.PropertyImages.Where(i => i.PropertyId == property.Id).FirstOrDefault();
             if (imageList[0] != null)
             {
-                temp.main = imageList[0];
+                propertyimage.main = imageList[0];
             }
             if (imageList[1] != null)
             {
-                temp.bedroom = imageList[1];
+                propertyimage.bedroom = imageList[1];
             }
             if (imageList[2] != null)
             {
-                temp.livingroom = imageList[2];
+                propertyimage.livingroom = imageList[2];
             }
             if (imageList[3] != null)
             {
-                temp.bathroom = imageList[3];
+                propertyimage.bathroom = imageList[3];
             }
             if (imageList[4] != null)
             {
-                temp.kitchen = imageList[4];
+                propertyimage.kitchen = imageList[4];
             }
 
-            Property test = new Property
+            Property updatedProperty = new Property
             {
                 Id = (int)property.Id,
-                UserId = identityUser.Id,
+                UserId = userid,
                 title = property.Title,
                 summary = property.Summary,
                 propertyType = property.PropertyType,
@@ -150,8 +151,8 @@ namespace UsersAndRolesDemo.Repositories
                 dimensions = property.Dimensions
             };
 
-            db.Entry(test).State = EntityState.Modified;
-            db.Entry(temp).State = EntityState.Modified;
+            db.Entry(updatedProperty).State = EntityState.Modified;
+            db.Entry(propertyimage).State = EntityState.Modified;
 
             try
             {

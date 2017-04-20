@@ -8,9 +8,9 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <h1>@Html.DisplayFor(model => model.title)</h1>
-        <div>@Html.DisplayFor(model => model.summary)</div>
-        <div>@Html.DisplayFor(model => model.builtYear)</div>
-        <div>@Html.DisplayFor(model => model.address)</div>
+        <div>@Html.DisplayFor(model => model.address)</div><br />
+        <div>@Html.DisplayFor(model => model.summary)</div><br />
+        <div>Built Year: @Html.DisplayFor(model => model.builtYear)</div>
         <div>Price: @Html.DisplayFor(model => model.baseRate)/Day</div>
     </div>
 </div>
