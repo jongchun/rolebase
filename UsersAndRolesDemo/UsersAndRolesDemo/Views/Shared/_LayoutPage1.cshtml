@@ -41,7 +41,8 @@
                     .datepicker({
                         defaultDate: "+1w",
                         changeMonth: true,
-                        numberOfMonths: 1
+                        numberOfMonths: 1,
+                        setDate: new Date()
                     })
                     .on("change", function () {
                         to.datepicker("option", "minDate", getDate(this));
