@@ -29,7 +29,9 @@
     </div>
     <div class="col-xs-12 col-md-4">
         <div class="thumbnail">
-            <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().livingroom)" class="img-responsive" />
+            <div style="height: 200px; overflow: hidden;">
+                <img src="@Url.Content(Model.PropertyImages.FirstOrDefault().livingroom)" class="img-responsive" style="width: 282px;height: 200px;-o-object-fit: contain;" />
+            </div>
             <div class="caption"></div>
         </div>
     </div>
