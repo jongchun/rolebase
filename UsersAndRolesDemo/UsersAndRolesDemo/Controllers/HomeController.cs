@@ -34,7 +34,8 @@ namespace UsersAndRolesDemo.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Properties");
             }
             Property property = db.Properties.Find(id);
             if (property == null)

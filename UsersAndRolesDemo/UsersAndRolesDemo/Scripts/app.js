@@ -22,7 +22,7 @@ function callback(val) {
     var str = "Property: " + val.summary + " PropertyType: " + val.propertyType + " UserId: " + val.UserId + " Nummer Bedrooms: " + val.numBedrooms + " Nummer Washrooms: " + val.numWashrooms + " Kitchen: " + val.kitchen + " Baserate: " + val.baseRate + " Address: " + val.address + " Built Year: " + val.builtYear + " Smoking Allowed: " + val.smokingAllowed + " max Number Guests" + val.maxNumberGuests + "Available Dates: " + val.availableDates + " Dimensions:" + val.dimensions;
     $('<li/>', { text: str }).appendTo($('#properties'));
 }
-
+/*
 // Deletes and refreshes list.
 function updateList() {
     $("#properties").replaceWith("<span id='value1'>(Result)<br /></span>");
@@ -54,3 +54,4 @@ function find() {
             $('#propertyFind').text('Find error: ' + err);
         });
 }
+*/
