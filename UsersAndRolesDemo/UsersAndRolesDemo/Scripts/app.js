@@ -1,6 +1,5 @@
 ﻿/// <reference path="jquery-3.1.1.js" />
-// var serviceUrl = './api/_OwnerPropertyContoller'; // **** OLD
-//var serviceUrl = './api/OwnerProperty';
+//var serviceUrl = 'http://localhost:58046/api/Properties';
 var serviceUrl = './api/Properties'
 
 function sendRequest() {

@@ -2,7 +2,11 @@
 @{
     ViewBag.Title = "Info";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <script src="./Scripts/jquery-3.1.1.js"></script>
+    <script src="./Scripts/app.js"></script>
 }
+
+
 
 <div class="panel panel-default">
     <div class="panel-body">
@@ -24,3 +28,7 @@
 <p>Then, add this code to the start of the Application_Start() method in the Global.asax file</p>
 <h4>Part 3: adding javascript</h4>
 <p>We also created scripts folder, add an app.js file. When the web page has loaded, the JavaScript in this file calls the web api controller and appends objects.</p>
+<p> To determine your port number run the project and get the port from the URL.</p>
+<h4>Part 5: html</h4>
+<p>To enable a property listing with the JavaScript that you just added, first create an empty Home controller. Inside body tag create script tag, inside script tag add. create  window.onload = function () and inside call sendRequest()</p>
+<p>inside body tag create a span tag with  id='value1'. Also reference the JQuery inside the head tag</p>
