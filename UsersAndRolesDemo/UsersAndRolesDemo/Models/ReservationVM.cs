@@ -29,5 +29,12 @@ namespace UsersAndRolesDemo.Models
         //[Required]
         //[Display(Name = "Base Rate Per Day")]
         //public decimal BaseRate { get; set; }
+
+        //[Display(Name = "Property Name")]
+        public string PropertyName { get; set; }
+
+        //public string Email { get; set; }
+
+        public decimal? TotalMoney { get; set; }
     }
 }

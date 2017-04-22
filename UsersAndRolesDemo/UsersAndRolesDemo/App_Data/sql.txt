@@ -58,11 +58,14 @@ CREATE TABLE Reservation(
 	Id int IDENTITY(1,1) PRIMARY KEY,
 	UserId nvarchar(128) NOT NULL,
 	PropertyId int NOT NULL,
-	startDate Date,
-	endDate Date,
-	numberGuests varchar(2),
+	FirstName varchar(30) NOT NULL,
+	LastName varchar(30) NOT NULL,
+	Email varchar(30) NOT NULL,
+	Phone varchar(20) NOT NULL,
+	startDate Date NOT NULL,
+	endDate Date NOT NULL,
 	status varchar(15),
-	totalAmount money,
+	totalAmount money NOT NULL,
 	FOREIGN KEY(UserId) REFERENCES AspNetUsers(Id),
 	FOREIGN KEY(PropertyId) REFERENCES Property(Id)
 );

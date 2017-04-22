@@ -212,6 +212,7 @@ namespace UsersAndRolesDemo.Controllers
         public ActionResult PayPal()
         {
             PayPal_IPN paypalResponse = new PayPal_IPN("test");
+            PaymentNotificationDBContext context = new PaymentNotificationDBContext();
 
             if (paypalResponse.TXN_ID != null)
             {
@@ -225,15 +226,41 @@ namespace UsersAndRolesDemo.Controllers
                 ipn.txTime = DateTime.Now;
                 ipn.custom = paypalResponse.Custom;
                 ipn.paymentStatus = paypalResponse.PaymentStatus;
-                //context.IPNs.Add(ipn);
-                //context.SaveChanges();
+                context.ipns.Add(ipn);
+                context.SaveChanges();
             }
             return View();
         }
-
-        public ActionResult Reservation()
+        public ActionResult Success()
         {
             return View();
+        }
+
+        public ActionResult Reservation(int? id)
+        {
+
+            ViewBag.Session = this.Session.SessionID;
+            PaymentNotificationDBContext context = new PaymentNotificationDBContext();
+            ReservationVM rvm = new ReservationVM();
+
+            if (id == null)
+            {
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Properties");
+            }
+            Property property = db.Properties.Find(id);
+            if (property == null)
+            {
+                return HttpNotFound();
+            }
+            rvm.StartDate = DateTime.Today;
+            rvm.EndDate = DateTime.Today;
+            rvm.PropertyName = property.title;
+            rvm.TotalMoney = property.baseRate;
+
+            return View(rvm);
+
+            //return View();
         }
     }
 }
