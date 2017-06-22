@@ -23,7 +23,7 @@ namespace UsersAndRolesDemo.Services
             const string CAPTCHA_VALID = "Valid";
             var response = HttpContext.Current.Request["g-recaptcha-response"];
             //secret that was generated in key value pair
-            const string secret = "6LeqchYUAAAAAOFXXeuK1hjPNJLN7FrDpefHDFv5";
+            const string secret = "<secret key>";
 
             var client = new WebClient();
             var reply = client.DownloadString(
