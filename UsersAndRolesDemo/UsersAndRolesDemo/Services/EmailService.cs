@@ -11,11 +11,10 @@ namespace UsersAndRolesDemo.Services
 {
     public class EmailService
     {
-        private string apiKey = "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";
-        private string adminEmail = "seatoskycabins@gmail.com";
+        private string apiKey = "API KEY";
+        private string adminEmail = "ADMIN EMAIL";
         public void SendEmail(string email, string subject, string content)
         {
-            //var apiKey = "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";
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
